@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationId>com.companyname.SWD607_Assignment2</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\drawable\Back_Button_Image.JPG" />
+    <None Remove="Resources\drawable\buffet.jpg" />
+    <None Remove="Resources\drawable\Cart_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Close_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Contact_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Food_Feature_1.jpg" />
+    <None Remove="Resources\drawable\Food_Feature_2.jpg" />
+    <None Remove="Resources\drawable\Home_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Image_Round_Corner.xml" />
+    <None Remove="Resources\drawable\Next_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Profile_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Search_Button_Image.JPG" />
+    <None Remove="Resources\drawable\white_button_border_gray.xml" />
+    <None Remove="Resources\drawable\white_button_no_border.xml" />
+    <None Remove="Resources\layout\AddEdit.xml" />
+    <None Remove="Resources\layout\ContactUs.xml" />
+    <None Remove="Resources\layout\FoodDescription.xml" />
+    <None Remove="Resources\layout\Menu.xml" />
+    <None Remove="Resources\layout\OrderDetail.xml" />
+    <None Remove="Resources\layout\PaymentOption.xml" />
+    <None Remove="Resources\layout\Profile.xml" />
+    <None Remove="Resources\layout\Reservation.xml" />
+    <None Remove="Resources\layout\SignIn.xml" />
+    <None Remove="Resources\layout\SignUp.xml" />
+  </ItemGroup>
+</Project>

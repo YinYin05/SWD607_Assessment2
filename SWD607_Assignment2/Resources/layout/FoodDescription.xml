@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Next Button -->
+    <ImageButton
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next_button_image"   
+        android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Close Button -->
+    <ImageButton
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_button_image"   
+        android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Heading-->
+    <TextView
+        android:id="@+id/textViewTitleCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Description"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView      
+        android:layout_width="match_parent"
+        android:layout_height="210dp"        
+        android:background="@drawable/image_round_corner"
+        android:src="@drawable/buffet"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/textViewTitleCompany"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textViewDishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:layout_below="@+id/imageView11"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp" />
+    <TextView
+        android:id="@+id/textViewDishPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$15.99"
+        android:layout_below="@+id/imageView11"
+        android:textSize="25sp"
+        android:layout_marginStart="490dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="16dp" />
+     <TextView
+        android:id="@+id/textViewDishPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photos"
+        android:layout_below="@+id/textViewDishName"
+        android:textSize="25sp"       
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:id="@+id/imageSection1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"       
+        android:layout_below="@+id/textViewDishPhoto"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="5dp"
+            android:layout_height="100dp"            
+            android:layout_margin="5dp"
+            android:background="@drawable/burger"            
+            android:layout_weight="0.5"
+            />
+
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="5dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/burger2"            
+            android:layout_weight="0.5"
+            />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="5dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/burger2"            
+            android:layout_weight="0.5"
+            />       
+    </LinearLayout> 
+
+    <TextView
+        android:id="@+id/textViewDishDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:layout_below="@+id/imageSection1"
+        android:textSize="25sp"       
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/textViewDishIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredients"
+        android:layout_below="@+id/textViewDishDetails"
+        android:textSize="25sp"       
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/textViewDishRecipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipe"
+        android:layout_below="@+id/textViewDishIngredients"
+        android:textSize="25sp"       
+        android:textColor="@android:color/black"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp" />
+
+     <Button
+        android:id="@+id/buttonOrderNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Now"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@drawable/blue_button"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_above="@+id/navigationSection"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+
+
+    <!-- Navigation Section -->
+    <LinearLayout
+        android:id="@+id/navigationSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:layout_margin="10dp"        
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="0dp"
+            android:src="@drawable/home_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home" />
+
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="0dp"
+            android:src="@drawable/search_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search" />
+
+        <ImageButton
+            android:id="@+id/buttonContactUs"
+            android:layout_width="0dp"
+            android:src="@drawable/contact_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Contact Us" />
+
+        <ImageButton
+            android:id="@+id/buttonProfile"
+            android:layout_width="0dp"
+            android:src="@drawable/profile_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile" />
+    </LinearLayout>
+
+</RelativeLayout>

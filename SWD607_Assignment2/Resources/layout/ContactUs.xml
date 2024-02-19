@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/linearLayout1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title : Contact -->
+            <TextView
+                android:id="@+id/textViewContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="16dp"
+                android:paddingStart="20dp"/>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your name"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="15dp"
+                android:paddingStart="20dp"/>
+
+            <EditText
+                android:id="@+id/editTextCustomerName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="  Name"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:paddingStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/textViewCustomerEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="5dp"
+                android:paddingStart="20dp"/>
+
+            <EditText
+                android:id="@+id/editTextCustomerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="  Email Address"
+                android:paddingStart="12dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" />
+
+            <!-- Subject -->
+            <TextView
+                android:id="@+id/textViewSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject"
+                android:textSize="25sp"
+                android:paddingStart="20dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/editTextSubject"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="  Subject"
+                android:paddingStart="12dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp" />
+
+            <!-- Message -->
+            <TextView
+                android:id="@+id/textViewMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Write your message"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="5dp"
+                android:paddingStart="20dp"/>
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:hint="  Message"
+                android:gravity="top|start"
+                android:paddingStart="12dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginEnd="17dp" />
+
+            <Button
+                android:id="@+id/buttonSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:background="@drawable/gray_button"
+                android:textColor="@android:color/white"
+                android:padding="8dp"
+                android:layout_margin="20dp"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"/>
+
+            <!-- Restaurant Image 1 -->
+            <ImageView
+                android:id="@+id/imageViewRestaurant1"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@drawable/restaurant1"
+                android:layout_marginTop="1dp"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Store Email -->
+                <TextView
+                    android:id="@+id/textViewStoreEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewStoreEmailAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rangers.Auckland@gmail.com"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="3dp"
+                    android:paddingStart="10dp"/>
+
+                <!-- Store Address -->
+                <TextView
+                    android:id="@+id/textViewStoreAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewStoreAddress1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="238 Queen Street, Auckland CBD"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="1dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewStoreAddress2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Auckland 1010"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="1dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewPhoneNumber1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09 827 6100"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="1dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewOpeningHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monday to Sunday"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="1dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00am to 11:00pm"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="1dp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/textViewFindUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Find Us Here"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewRestaurant2"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:src="@drawable/restaurant2"
+                    android:layout_marginTop="1dp"
+                    android:layout_centerHorizontal="true"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Navigation Section -->
+    <LinearLayout
+        android:id="@+id/navigationSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="0dp"
+            android:src="@drawable/home_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home" />
+
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="0dp"
+            android:src="@drawable/search_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search" />
+
+        <ImageButton
+            android:id="@+id/buttonContactUs"
+            android:layout_width="0dp"
+            android:src="@drawable/contact_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Contact Us" />
+
+        <ImageButton
+            android:id="@+id/buttonProfile"
+            android:layout_width="0dp"
+            android:src="@drawable/profile_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile" />
+    </LinearLayout>
+
+</LinearLayout>

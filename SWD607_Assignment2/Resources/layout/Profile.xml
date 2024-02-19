@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget0"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="163dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:src="@drawable/aucklandrangerslogo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Auckland Rangers"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:id="@+id/txtName"
+        android:textColor="@android:color/background_dark"
+        android:textSize="40dp"
+        android:textStyle="bold"    
+        android:layout_marginTop="150dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Discover and Enjoy Food"
+        android:gravity="center"
+        android:layout_height="35dp"
+        android:textSize="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txt1"
+        android:layout_marginTop="210dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="My Profile"
+        android:gravity="center"
+        android:layout_height="80dp"
+        android:textSize="35dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txtAccount"
+        android:layout_marginTop="240dp"
+        android:textStyle="bold" 
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txtUsername"
+        android:textColorHint="@android:color/darker_gray"
+        android:hint="  Username*"
+        android:background="@drawable/white_button_border" 
+        android:layout_marginTop="320dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txtPassword"
+        android:hint="  Password*"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:layout_marginTop="400dp"
+        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/txtPassword">
+        <EditText
+            android:id="@+id/editTextFirstName"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:hint="  First Name*"
+            android:textColorHint="@android:color/darker_gray"
+            android:background="@drawable/white_button_border"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            android:layout_width="317.5dp"
+            android:layout_height="60dp"
+            android:hint="  Last Name*"
+            android:layout_toRightOf="@+id/editTextFirstName"
+            android:textColorHint="@android:color/darker_gray"
+            android:background="@drawable/white_button_border"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"/>
+        </RelativeLayout>
+        <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txtPhone"
+        android:hint="  Mobile Number*"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:layout_marginTop="560dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txtEmail"
+        android:hint="  Email*"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:layout_marginTop="640dp"
+        />
+
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:id="@+id/btnUpdate"
+        android:layout_marginTop="725dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/white_button_border"
+        android:text="Update"
+        android:textSize="25dp"
+        android:textColor="@android:color/background_dark"
+        android:textAllCaps="false"     
+        />
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:id="@+id/btnDeleteAccount"  
+        android:layout_marginTop="725dp"
+        android:layout_marginLeft="320dp"
+        android:background="@drawable/light_blue_color_round"
+        android:text="Delete Account"
+        android:textSize="25dp"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
+
+
+
+</RelativeLayout>
+    

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="163dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:src="@drawable/aucklandrangerslogo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Auckland Rangers"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:id="@+id/txtName"
+        android:textColor="@android:color/background_dark"
+        android:textSize="40dp"
+        android:textStyle="bold"    
+        android:layout_marginTop="150dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Discover and Enjoy Food"
+        android:gravity="center"
+        android:layout_height="35dp"
+        android:textSize="20dp"
+        android:textColor="@android:color/background_dark"
+        android:id="@+id/txt1"
+        android:layout_marginTop="210dp"
+        />
+
+
+    <TextView
+        android:id="@+id/textViewMyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Now"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"       
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="20dp"
+        android:paddingStart="40dp"
+        />
+
+    <!-- Username EditText -->
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="  Username*"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:textSize="25sp"       
+        android:layout_below="@id/textViewMyAccount"
+        android:paddingStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="  Password*"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:paddingStart="15dp"
+        android:textSize="25sp"       
+        android:layout_below="@+id/editTextUsername"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/editTextPassword">          
+
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:hint="  First Name*"
+                android:paddingStart="15dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"                
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="40dp"/>
+
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="270dp"
+                android:layout_height="60dp"
+                android:hint="  Last Name*"
+                android:paddingStart="15dp"
+                android:layout_toRightOf="@+id/editTextFirstName"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+
+             <EditText
+                android:id="@+id/editTextMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="  Mobile Number*"
+                android:paddingStart="15dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_below="@+id/editTextFirstName"
+                android:layout_marginTop="10dp"        
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp" />
+            <EditText
+                android:id="@+id/editTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="  Email Address*"
+                android:paddingStart="15dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/white_button_border"
+                android:textSize="25sp"
+                android:layout_below="@+id/editTextMobileNumber"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp" />
+    
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:background="@drawable/blue_button"
+                android:textColor="@android:color/black"
+                android:padding="16dp"
+                android:layout_margin="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/editTextEmailAddress"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"/>
+
+        </RelativeLayout>
+        
+</RelativeLayout>

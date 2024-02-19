@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_button_image"
+        android:text="Back"
+        android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Title : Payment -->
+    <TextView
+        android:id="@+id/textViewPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+        <FrameLayout
+            android:id="@+id/frameLayoutTotalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="90dp"
+            android:layout_below="@+id/textViewPayment"
+            android:background="@drawable/gray_button"
+            android:layout_centerHorizontal="true">
+
+                    <!-- Total Amount -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/relativeLayoutSubtotal"
+                        android:id="@+id/relativeLayoutTotalAmount">           
+                        <TextView
+                            android:id="@+id/textViewAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:text="Total Amount :"
+                            android:textSize="35sp"
+                            android:gravity="center_vertical|start"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"                        
+                            android:paddingStart="15dp"                
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:id="@+id/textViewTotalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:text=" $"
+                            android:layout_toRightOf="@+id/textViewAmount"
+                            android:textSize="35sp"
+                            android:gravity="center_vertical|start"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"                        
+                            android:paddingStart="20dp"                
+                            android:layout_marginTop="10dp" />
+                    </RelativeLayout>
+
+        </FrameLayout>
+
+    <!-- Choose Payment Option -->
+    <TextView
+        android:id="@+id/textViewChooseOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Payment Option"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/frameLayoutTotalAmount"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <!-- Cash Button -->
+    <Button
+        android:id="@+id/buttonCash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cash"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/light_blue_color_round"
+        android:textColor="@android:color/white"
+        android:padding="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_below="@+id/textViewChooseOption"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+
+    <!-- Card Button -->
+    <Button
+        android:id="@+id/buttonCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credit / Debit Card"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/light_blue_color_round"
+        android:textColor="@android:color/white"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_below="@+id/buttonCash"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+
+    <!-- Rating Section -->
+    <TextView
+        android:id="@+id/textViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/buttonCard"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp" />
+    
+    <!-- Rating Section -->
+    <LinearLayout
+        android:id="@+id/RatingSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"        
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textViewRating">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar1"
+            android:progressTint="#FFCC01"
+            android:rating="3"
+            android:numStars="5"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:layout_gravity="center"                        
+            android:clickable="true"            
+            android:stepSize="1"/>
+    </LinearLayout>
+
+    <!-- Submit Rating -->
+    <Button
+        android:id="@+id/buttonProceedToPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/light_blue_color_round"
+        android:textColor="@android:color/white"
+        android:padding="20dp"        
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_above="@id/navigationSection"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+
+    <!-- Navigation Section -->
+    <LinearLayout
+        android:id="@+id/navigationSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:layout_margin="10dp"        
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="0dp"
+            android:src="@drawable/home_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home" />
+
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="0dp"
+            android:src="@drawable/search_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Search" />
+
+        <ImageButton
+            android:id="@+id/buttonContactUs"
+            android:layout_width="0dp"
+            android:src="@drawable/contact_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Contact Us" />
+
+        <ImageButton
+            android:id="@+id/buttonProfile"
+            android:layout_width="0dp"
+            android:src="@drawable/profile_button_image"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile" />
+    </LinearLayout>
+
+</RelativeLayout>
