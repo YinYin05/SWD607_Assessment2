@@ -34,5 +34,6 @@
     <None Remove="Resources\layout\Reservation.xml" />
     <None Remove="Resources\layout\SignIn.xml" />
     <None Remove="Resources\layout\SignUp.xml" />
+    <None Remove="Resources\layout\XMLFile1.xml" />
   </ItemGroup>
 </Project>
