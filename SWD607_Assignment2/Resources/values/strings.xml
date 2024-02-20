@@ -79,6 +79,11 @@
 	<string name="openhours_days">Monday to Sunday</string>
 	<string name="openhours_time">10:00am to 11:00pm</string>
 	<string name="find_us_here">Find Us Here</string>
+	<string name="number_tag">Number :</string>
+	<string name="reservation_tag">Make Reservation</string>
+	<string name="add_button">Add</string>
+	<string name="edit_button">Edit</string>
+	
 	
 	
 </resources>
