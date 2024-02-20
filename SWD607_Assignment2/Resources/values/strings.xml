@@ -60,6 +60,25 @@
 	<string name="food_ingredients">Ingredients</string>
 	<string name="food_recipe">Recipe</string>
 	<string name="order_now">Order Now</string>
-			
+	<string name="contact_title">Contact</string>
+	<string name="enter_your_name">Enter your name</string>
+	<string name="full_name">Name*</string>
+	<string name="email_tag">Email</string>
+	<string name="subject_tag">Subject</string>
+	<string name="subject_hint">Subject*</string>
+	<string name="message_hint">Message*</string>
+	<string name="message_tag">Write your message</string>
+	<string name="message_send_btn">Send</string>
+	<string name="company_email">Rangers.Auckland@gmail.com</string>
+	<string name="address_tag">Address</string>
+	<string name="address_print1">238 Queen Street, Auckland CBD</string>
+	<string name="address_print2">Auckland 1010</string>
+	<string name="phonenumber_tag">Phone Number</string>
+	<string name="phonenumber_print">09 827 6100</string>
+	<string name="openhours_tag">Open Hours</string>
+	<string name="openhours_days">Monday to Sunday</string>
+	<string name="openhours_time">10:00am to 11:00pm</string>
+	<string name="find_us_here">Find Us Here</string>
+	
 	
 </resources>
