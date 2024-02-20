@@ -16,4 +16,10 @@
 	<string name="forgot_userpass">Forgot Username or Password?</string>
 	<string name="sign_up_btn">Sign Up</string>
 	<string name="log_in_btn">Login</string>
+	<string name="buttonBack">Search</string>
+	<string name="reservation_list">Reservation List</string>
+	<string name="lists_hint">Lists</string>
+	<string name="add_edit_button">Add / Edit</string>
+	<string name="delete_button">Delete</string>
+	
 </resources>
