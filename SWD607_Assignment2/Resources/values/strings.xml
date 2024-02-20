@@ -54,7 +54,12 @@
 	<string name="menu_lists">Menu List</string>
 	<string name="featured_items">Featured items</string>
 	<string name="view_all">View all</string>
-	
+	<string name="food_description_title">Food Description</string>
+	<string name="food_photo">Photos</string>
+	<string name="food_details">Details</string>
+	<string name="food_ingredients">Ingredients</string>
+	<string name="food_recipe">Recipe</string>
+	<string name="order_now">Order Now</string>
 			
 	
 </resources>

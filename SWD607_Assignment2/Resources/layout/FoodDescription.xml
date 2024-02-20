@@ -14,7 +14,8 @@
         android:background="@android:color/transparent"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imageViewLogo"/>
 
     <!-- Close Button -->
     <ImageButton
@@ -26,14 +27,15 @@
         android:background="@android:color/transparent"
         android:layout_alignParentStart="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imageViewLogo"/>
 
     <!-- Heading-->
     <TextView
         android:id="@+id/textViewTitleCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food Description"
+        android:text="@string/food_description_title"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -50,13 +52,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/imageView11" />
+        android:id="@+id/imageView11"
+        android:contentDescription="@string/imageViewLogo"/>
 
     <TextView
         android:id="@+id/textViewDishName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food Name"
+        android:text="@string/food_name"
         android:layout_below="@+id/imageView11"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -67,7 +70,7 @@
         android:id="@+id/textViewDishPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$15.99"
+        android:text="@string/total_amount_pay_print"
         android:layout_below="@+id/imageView11"
         android:textSize="25sp"
         android:layout_marginStart="490dp"
@@ -79,7 +82,7 @@
         android:id="@+id/textViewDishPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Photos"
+        android:text="@string/food_photo"
         android:layout_below="@+id/textViewDishName"
         android:textSize="25sp"       
         android:textColor="@android:color/black"
@@ -100,7 +103,8 @@
             android:layout_width="5dp"
             android:layout_height="100dp"            
             android:layout_margin="5dp"
-            android:background="@drawable/burger"            
+            android:background="@drawable/burger"
+            android:contentDescription="@string/imageViewLogo"
             android:layout_weight="0.5"
             />
 
@@ -109,7 +113,8 @@
             android:layout_width="5dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:background="@drawable/burger2"            
+            android:background="@drawable/burger2"
+            android:contentDescription="@string/imageViewLogo"
             android:layout_weight="0.5"
             />
 
@@ -118,7 +123,8 @@
             android:layout_width="5dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:background="@drawable/burger2"            
+            android:background="@drawable/burger2"
+            android:contentDescription="@string/imageViewLogo"
             android:layout_weight="0.5"
             />       
     </LinearLayout> 
@@ -127,7 +133,7 @@
         android:id="@+id/textViewDishDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Details"
+        android:text="@string/food_details"
         android:layout_below="@+id/imageSection1"
         android:textSize="25sp"       
         android:textColor="@android:color/black"
@@ -137,7 +143,7 @@
         android:id="@+id/textViewDishIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingredients"
+        android:text="@string/food_ingredients"
         android:layout_below="@+id/textViewDishDetails"
         android:textSize="25sp"       
         android:textColor="@android:color/black"
@@ -147,7 +153,7 @@
         android:id="@+id/textViewDishRecipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recipe"
+        android:text="@string/food_recipe"
         android:layout_below="@+id/textViewDishIngredients"
         android:textSize="25sp"       
         android:textColor="@android:color/black"
@@ -158,7 +164,7 @@
         android:id="@+id/buttonOrderNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order Now"
+        android:text="@string/order_now"
         android:textSize="25sp"
         android:textStyle="bold"
         android:background="@drawable/blue_button"
@@ -190,7 +196,7 @@
             android:background="@android:color/white"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Home" />
+            android:contentDescription="@string/imageViewLogo"/>
 
         <ImageButton
             android:id="@+id/buttonSearch"
@@ -199,7 +205,7 @@
             android:background="@android:color/white"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Search" />
+            android:contentDescription="@string/imageViewLogo"/>
 
         <ImageButton
             android:id="@+id/buttonContactUs"
@@ -208,7 +214,7 @@
             android:background="@android:color/white"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Contact Us" />
+            android:contentDescription="@string/imageViewLogo"/>
 
         <ImageButton
             android:id="@+id/buttonProfile"
@@ -217,7 +223,7 @@
             android:background="@android:color/white"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Profile" />
+            android:contentDescription="@string/imageViewLogo"/>
     </LinearLayout>
 
 </RelativeLayout>
