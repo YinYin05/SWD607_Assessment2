@@ -42,125 +42,146 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
 
-    <ImageView      
-        android:layout_width="match_parent"
-        android:layout_height="210dp"        
-        android:background="@drawable/image_round_corner"
-        android:src="@drawable/pavlova3"
-        android:scaleType="fitCenter"
-        android:layout_below="@+id/textViewTitleCompany"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/imageView11"
-        android:contentDescription="@string/imageViewLogo"/>
 
-    <TextView
-        android:id="@+id/textViewDishName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/food_name"
-        android:layout_below="@+id/imageView11"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp" />
-    <TextView
-        android:id="@+id/textViewDishPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/total_amount_pay_print"
-        android:layout_below="@+id/imageView11"
-        android:textSize="25sp"
-        android:layout_marginStart="490dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="16dp" />
-     <TextView
-        android:id="@+id/textViewDishPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/food_photo"
-        android:layout_below="@+id/textViewDishName"
-        android:textSize="25sp"       
-        android:textColor="@android:color/black"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp" />
+                <ImageView      
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"        
+                    android:background="@drawable/image_round_corner"
+                    android:src="@drawable/pavlova3"
+                    android:scaleType="fitCenter"
+                    android:layout_below="@+id/textViewTitleCompany"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/imageView11"
+                    android:contentDescription="@string/imageViewLogo"/>
 
-    <LinearLayout
-        android:id="@+id/imageSection1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@android:color/white"       
-        android:layout_below="@+id/textViewDishPhoto"
-        android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/textViewDishName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_name"
+                    android:layout_below="@+id/imageView11"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp" />
+                <TextView
+                    android:id="@+id/textViewDishPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_amount_pay_print"
+                    android:layout_below="@+id/imageView11"
+                    android:textSize="25sp"
+                    android:layout_marginStart="480dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="16dp" />
+                 <TextView
+                    android:id="@+id/textViewDishPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_photo"
+                    android:layout_below="@+id/textViewDishName"
+                    android:textSize="25sp"       
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp" />
 
-        <ImageView
-            android:id="@+id/imageView21"
-            android:layout_width="5dp"
-            android:layout_height="100dp"            
-            android:layout_margin="5dp"
-            android:background="@drawable/pavlova2"
-            android:contentDescription="@string/imageViewLogo"
-            android:layout_weight="0.5"
-            />
+                <LinearLayout
+                    android:id="@+id/imageSection1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@android:color/white"       
+                    android:layout_below="@+id/textViewDishPhoto"
+                    android:layout_margin="5dp">
 
-        <ImageView
-            android:id="@+id/imageView22"
-            android:layout_width="5dp"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/pavlova4"
-            android:contentDescription="@string/imageViewLogo"
-            android:layout_weight="0.5"
-            />
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="5dp"
+                        android:layout_height="100dp"            
+                        android:layout_margin="5dp"
+                        android:background="@drawable/pavlova2"
+                        android:contentDescription="@string/imageViewLogo"
+                        android:layout_weight="0.5"/>
 
-        <ImageView
-            android:id="@+id/imageView23"
-            android:layout_width="5dp"
-            android:layout_height="100dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/pavlova1"
-            android:contentDescription="@string/imageViewLogo"
-            android:layout_weight="0.5"
-            />       
-    </LinearLayout> 
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="5dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/pavlova4"
+                        android:contentDescription="@string/imageViewLogo"
+                        android:layout_weight="0.5"/>
 
-    <TextView
-        android:id="@+id/textViewDishDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/food_details"
-        android:layout_below="@+id/imageSection1"
-        android:textSize="25sp"       
-        android:textColor="@android:color/black"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:id="@+id/textViewDishIngredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/food_ingredients"
-        android:layout_below="@+id/textViewDishDetails"
-        android:textSize="25sp"       
-        android:textColor="@android:color/black"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:id="@+id/textViewDishRecipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/food_recipe"
-        android:layout_below="@+id/textViewDishIngredients"
-        android:textSize="25sp"       
-        android:textColor="@android:color/black"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp" />
+                    <ImageView
+                        android:id="@+id/imageView23"
+                        android:layout_width="5dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/pavlova1"
+                        android:contentDescription="@string/imageViewLogo"
+                        android:layout_weight="0.5"/>       
+                </LinearLayout> 
 
-     <Button
+                        <TextView
+                            android:id="@+id/textViewDishDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/food_details"
+                            android:layout_below="@+id/imageSection1"
+                            android:textSize="25sp"       
+                            android:textColor="@android:color/black"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewDishIngredients"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/food_ingredients"
+                            android:layout_below="@+id/textViewDishDetails"
+                            android:textSize="25sp"       
+                            android:textColor="@android:color/black"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp" />
+
+                        <ListView
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/listViewIngredients" />       
+
+                        <TextView
+                            android:id="@+id/textViewDishRecipe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/food_recipe"
+                            android:layout_below="@+id/textViewDishIngredients"
+                            android:textSize="25sp"       
+                            android:textColor="@android:color/black"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp" />
+                        <ListView
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/listViewRecipe" />
+
+        
+
+    <Button
         android:id="@+id/buttonOrderNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -176,7 +197,7 @@
         android:layout_above="@+id/navigationSection"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>
-
+      
 
     <!-- Navigation Section -->
     <LinearLayout
