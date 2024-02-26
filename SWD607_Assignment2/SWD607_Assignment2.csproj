@@ -35,4 +35,8 @@
     <None Remove="Resources\layout\SignIn.xml" />
     <None Remove="Resources\layout\SignUp.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.8" />
+  </ItemGroup>
 </Project>
