@@ -4,169 +4,166 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <!-- Back Button -->
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"       
-        android:src="@drawable/back_button_image"
-        android:textColor="@android:color/black"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/imageViewLogo"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Title : Make Reservation -->
-    <TextView
-        android:id="@+id/textViewReservation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reservation_tag"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp" />
-
-    <TextView
-        android:id="@+id/textAucklandRangers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company_name"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/textViewReservation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
-
     <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_button_image"
+            android:textColor="@android:color/black"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/imageViewLogo"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Title : Make Reservation -->
+        <TextView
+            android:id="@+id/textViewReservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reservation_tag"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="false"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="70dp" />
+
+        <TextView
+            android:id="@+id/textAucklandRangers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_name"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/textViewReservation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+
+        <!-- Date Section -->
+        <RelativeLayout
+            android:id="@+id/DateSection"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/textAucklandRangers">
-            <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/textAucklandRangers"
+            android:layout_alignParentBottom="false">
+
+            <FrameLayout
+                android:id="@+id/frameLayoutNumberSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/textAucklandRangers"
+                android:background="@drawable/gray_button"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/textlabelSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_tag"
+                    android:paddingStart="16dp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="start|center_vertical" />
+
+                <Spinner
+                    android:id="@+id/spinnerNumber"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:textSize="25sp"
+                    android:background="@drawable/white_button_no_border"
+                    android:paddingEnd="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="end|center_vertical" />
+            </FrameLayout>
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frameLayoutNumberSpinner"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/datePicker1" />
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/datePicker1"
+                android:id="@+id/timePicker1" />
+
+            <!-- ListView -->
+            <ListView
+                android:id="@+id/listView3"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_below="@+id/timePicker1"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/gray_button" />
+
+            <Button
+                android:id="@+id/buttonAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="@string/add_button"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@drawable/blue_button"
+                android:textColor="@android:color/white"
+                android:padding="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/listView3"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"/>
 
-                <!-- Date Section -->
-                <RelativeLayout
-                    android:id="@+id/DateSection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@android:color/white"
-                    android:padding="16dp"
-                    android:layout_margin="15dp"
-                    android:layout_below="@+id/textAucklandRangers"
-                    android:layout_alignParentBottom="false">
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_button"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@drawable/blue_button"
+                android:textColor="@android:color/white"
+                android:padding="16dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/buttonAdd"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="false"/> 
 
-                    <FrameLayout
-                        android:id="@+id/frameLayoutNumberSpinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_below="@id/textAucklandRangers"
-                        android:background="@drawable/gray_button"
-                        android:layout_centerHorizontal="true">
+        </RelativeLayout>
 
-                        <TextView
-                            android:id="@+id/textlabelSpinner"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/number_tag"
-                            android:paddingStart="16dp"
-                            android:textSize="25sp"
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:layout_gravity="start|center_vertical" />
+    </RelativeLayout>
 
-                        <Spinner
-                            android:id="@+id/spinnerNumber"
-                            android:layout_width="120dp"
-                            android:layout_height="50dp"
-                            android:textSize="25sp"
-                            android:background="@drawable/white_button_no_border"
-                            android:paddingEnd="10dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="15dp"
-                            android:textStyle="bold"
-                            android:layout_gravity="end|center_vertical" />
-                    </FrameLayout>
-
-                    <DatePicker
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/frameLayoutNumberSpinner"
-                        android:layout_marginTop="20dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:id="@+id/datePicker1" />
-                    <TimePicker
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="25px"
-                        android:minHeight="25px"
-                        android:layout_marginTop="20dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_below="@+id/datePicker1"
-                        android:id="@+id/timePicker1" />
-                    <EditText
-                        android:id="@+id/editTextLists"
-                        android:layout_width="match_parent"
-                        android:layout_height="400dp"
-                        android:hint="@string/lists_hint"
-                        android:inputType="text"
-                        android:background="@drawable/gray_button"                   
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:layout_below="@+id/timePicker1"
-                        android:paddingStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="30dp" />
-
-                    <Button
-                        android:id="@+id/buttonAdd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/add_button"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/blue_button"
-                        android:textColor="@android:color/white"
-                        android:padding="16dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginTop="50dp"
-                        android:layout_below="@+id/editTextLists"
-                        android:layout_centerHorizontal="true"
-                        android:textAllCaps="false"/>
-
-                    <Button
-                        android:id="@+id/buttonEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/edit_button"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/blue_button"
-                        android:textColor="@android:color/white"
-                        android:padding="16dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_below="@+id/buttonAdd"
-                        android:layout_centerHorizontal="true"
-                        android:textAllCaps="false"/>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </ScrollView>
+</ScrollView>
 
 </RelativeLayout>
