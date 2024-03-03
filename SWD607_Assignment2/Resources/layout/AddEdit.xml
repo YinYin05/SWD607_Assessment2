@@ -8,60 +8,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white">
-
-        <!-- Back Button -->
-        <ImageButton
-            android:id="@+id/buttonBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back_button_image"
-            android:textColor="@android:color/black"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/imageViewLogo"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"/>
-
-        <!-- Title : Make Reservation -->
-        <TextView
-            android:id="@+id/textViewReservation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/reservation_tag"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_centerHorizontal="false"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="70dp" />
-
-        <TextView
-            android:id="@+id/textAucklandRangers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/company_name"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:layout_below="@+id/textViewReservation"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp" />
-
-        <!-- Date Section -->
-        <RelativeLayout
-            android:id="@+id/DateSection"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:background="@android:color/white"
-            android:padding="16dp"
-            android:layout_margin="15dp"
-            android:layout_below="@+id/textAucklandRangers"
-            android:layout_alignParentBottom="false">
+            android:padding="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
+
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_button_image"
+                android:textColor="@android:color/black"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/imageViewLogo"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Title : Make Reservation -->
+            <TextView
+                android:id="@+id/textViewReservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reservation_tag"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_centerHorizontal="false"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="70dp" />
+
+            <TextView
+                android:id="@+id/textAucklandRangers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/company_name"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_below="@+id/textViewReservation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp" />
+
+            <!-- Date Section -->
+            <RelativeLayout
+                android:id="@+id/DateSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@android:color/white"
+                android:padding="16dp"
+                android:layout_margin="15dp"
+                android:layout_below="@+id/textAucklandRangers"
+                android:layout_alignParentBottom="false">
 
             <FrameLayout
                 android:id="@+id/frameLayoutNumberSpinner"
@@ -160,9 +167,11 @@
                 android:layout_centerHorizontal="true"
                 android:textAllCaps="false"/> 
 
+            </RelativeLayout>
+
         </RelativeLayout>
 
-    </RelativeLayout>
+   </LinearLayout>
 
 </ScrollView>
 
