@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -31,20 +30,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp" />
 
-    <TextView
-        android:id="@+id/editTextLastName"
+    <!-- ListView -->
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="390dp"
-        android:hint="@string/lists_hint"
-        android:background="@drawable/gray_button"
-        android:textSize="25sp"
-        android:gravity="top|start"
-        android:paddingStart="12dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textViewReservation"
+        android:layout_height="350dp"
+        android:layout_below="@id/textViewReservation"
         android:layout_marginTop="1dp"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp" />
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/gray_button" />
 
     <Button
         android:id="@+id/buttonAddEdit"
@@ -59,7 +54,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/editTextLastName"
+        android:layout_below="@id/listView"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>
 
