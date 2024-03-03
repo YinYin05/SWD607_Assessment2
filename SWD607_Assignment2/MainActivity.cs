@@ -15,7 +15,7 @@ namespace Auckland_Rangers
         EditText edtusername, edtpassword;       
         Button ButtonLogin;
         Button ButtonHome;
-        DatabaseManager Obj_databaseManager;
+        DatabaseManager Obj_databaseManager;    
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -34,30 +34,41 @@ namespace Auckland_Rangers
         }
         private void LoginPressed(object sender, EventArgs e)
         {
-            SignUp signup = new SignUp();
-            if (edtusername.Text != string.Empty || edtpassword.Text != string.Empty)
+            
+            string username = edtusername.Text;
+            string password = edtpassword.Text;
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                
+                Toast.MakeText(this, "Please enter both username and password", ToastLength.Short).Show();
+                return;
             }
             else
             {
-                Toast.MakeText(this, "Please enter value in all field.", ToastLength.Long).Show();
-            }
-            
+                SignUp signup = new SignUp();
 
-            
+                if (signup != null && signup.Password == password)
+                {
+                    Intent Login_intent = new Intent(this, typeof(MenuActivity));
 
-        
-            
+                    
+                    Login_intent.PutExtra("UserName", signup.UserName);
+                    Login_intent.PutExtra("Password", signup.Password);
+                    
+                    StartActivity(Login_intent);
+
+                }
+            }            
         }
         private void SignUpPressed(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(SignUpActivity));
             StartActivity(intent);
+            //'Unable to find explicit activity class {com.companyname.SWD607_Assignment2/crc64b8371ed0b9bbb922.SignUpActivity};
+            //have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?'
         }
     }
 
-
+    [Activity(Label ="agfbak,eugfs,dkjg")]
     //SignUp progress
     public class SignUpActivity : Activity
     {
@@ -104,6 +115,7 @@ namespace Auckland_Rangers
 
 
     //Menu progress
+    [Activity(Label = "Menu")]
     public class MenuActivity : Activity
     {
         ImageButton Ibtnmaincart;
@@ -136,6 +148,11 @@ namespace Auckland_Rangers
             btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
             Ibtnmaincart.Click += MainCartPressed;
+            Ibtncart1.Click += MainCartPressed;
+            Ibtncart2.Click += MainCartPressed;
+            txtMoreoptions.Click += MainCartPressed;
+            txtViewall.Click += MainCartPressed;
+            buttonMenulist.Click += MainCartPressed;
             buttonReservation1.Click += ReservationPressed;
             btnHome.Click += HomePressed;
             btnContact.Click += ContactUsPressed;
@@ -171,8 +188,9 @@ namespace Auckland_Rangers
         }
     }
 
-    
+
     //Reservation progress
+    [Activity(Label = "reservation")]
     public class ReservationActivity : Activity
     {
         Button btnAddEdit;
@@ -197,6 +215,7 @@ namespace Auckland_Rangers
 
 
     //Orderdetail
+    [Activity(Label = "Orderdetail")]
     public class OrderdetailActivity : Activity
     {
         Button btnPayment;
@@ -247,6 +266,7 @@ namespace Auckland_Rangers
 
 
     //Contact Us
+    [Activity(Label = "Contact")]
     public class ContactActivity : Activity
     {
         Button btnSend;
@@ -296,6 +316,7 @@ namespace Auckland_Rangers
 
 
     //Profile
+    [Activity(Label = "Profile")]
     public class ProfileActivity : Activity
     {
         Button Updatebtn;
@@ -371,6 +392,7 @@ namespace Auckland_Rangers
 
 
     //Payment
+    [Activity(Label = "Payment")]
     public class PaymentOptionActivity : Activity
     {
         ImageButton back;
@@ -423,6 +445,7 @@ namespace Auckland_Rangers
             StartActivity(intent);
         }
     }
+    [Activity(Label = "AddEdit")]
     public class AddEditActivity : Activity
     {
         Button addbutton;
