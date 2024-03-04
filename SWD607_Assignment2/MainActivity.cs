@@ -44,18 +44,17 @@ namespace Auckland_Rangers
             }
             else
             {
-                SignUp signup = new SignUp();
+                SignUp signup = Obj_databaseManager.GetUserName(username);
 
                 if (signup != null && signup.Password == password)
                 {
-                    Intent Login_intent = new Intent(this, typeof(MenuActivity));
-
-                    
-                    Login_intent.PutExtra("UserName", signup.UserName);
-                    Login_intent.PutExtra("Password", signup.Password);
-                    
+                    Intent Login_intent = new Intent(this, typeof(MenuActivity));            
                     StartActivity(Login_intent);
-
+                }
+                else
+                {
+                    Toast.MakeText(this, "Please enter correct one", ToastLength.Short).Show();
+                    return;
                 }
             }            
         }
@@ -68,7 +67,7 @@ namespace Auckland_Rangers
         }
     }
 
-    [Activity(Label ="agfbak,eugfs,dkjg")]
+    [Activity(Label ="SignUp")]
     //SignUp progress
     public class SignUpActivity : Activity
     {
@@ -106,7 +105,7 @@ namespace Auckland_Rangers
                 Email = email.Text
             };
 
-            _dbManager.UpdateUser(UpdateUserData);
+            _dbManager.InsertUser(UpdateUserData);
             Toast.MakeText(this, "Person Data is inserted successfully", ToastLength.Long).Show();          
             Intent intent = new Intent(this,typeof(SignInActivity));
             StartActivity(intent);
@@ -218,6 +217,11 @@ namespace Auckland_Rangers
     [Activity(Label = "Orderdetail")]
     public class OrderdetailActivity : Activity
     {
+        EditText CheeseRoll;
+        EditText Pavlova;
+        EditText OnionDip;
+        EditText HokeyPokey;
+        EditText Fritter;
         Button btnPayment;
         ImageButton btnHome;
         ImageButton btnSearch;
@@ -233,6 +237,11 @@ namespace Auckland_Rangers
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
+                CheeseRoll = FindViewById<EditText>(Resource.Id.foodQuantitySpinner1);
+                Pavlova = FindViewById<EditText>(Resource.Id.foodQuantitySpinner2);
+                OnionDip = FindViewById<EditText>(Resource.Id.foodQuantitySpinner3);
+                HokeyPokey = FindViewById<EditText>(Resource.Id.foodQuantitySpinner4);
+                Fritter = FindViewById<EditText>(Resource.Id.foodQuantitySpinner5);
 
                 btnPayment.Click += PaymentPressed;
                 btnHome.Click += HomePressed;
@@ -450,6 +459,7 @@ namespace Auckland_Rangers
     {
         Button addbutton;
         Button editbutton;
+        Spinner Tablespin;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -457,9 +467,34 @@ namespace Auckland_Rangers
                 SetContentView(Resource.Layout.AddEdit);
                 addbutton = FindViewById<Button>(Resource.Id.buttonAdd);
                 editbutton = FindViewById<Button>(Resource.Id.buttonEdit);
+                Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
 
+                Tablespin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+                var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Table_Number, Android.Resource.Layout.SimpleSpinnerItem);
+                adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+                Tablespin.Adapter = adapter;
             }
 
+        }
+        public void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 1")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 2")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 3")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 4")
+            {
+
+            }
         }
     }
 

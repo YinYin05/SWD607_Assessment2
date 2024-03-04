@@ -105,8 +105,8 @@
                         android:layout_below="@id/foodPrice"/>
 
                     <!-- Quantity Spinner -->
-                    <Spinner
-                        android:id="@+id/foodQuantitySpinner"
+                    <EditText
+                        android:id="@+id/foodQuantitySpinner1"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -114,6 +114,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="95dp"
+                        android:inputType="number"
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
@@ -214,8 +215,8 @@
                         android:layout_below="@id/foodPrice"/>
 
                     <!-- Quantity Spinner -->
-                    <Spinner
-                        android:id="@+id/foodQuantitySpinner"
+                    <EditText
+                        android:id="@+id/foodQuantitySpinner2"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -223,6 +224,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="95dp"
+                        android:inputType="number"
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
@@ -323,8 +325,8 @@
                         android:layout_below="@id/foodPrice"/>
 
                     <!-- Quantity Spinner -->
-                    <Spinner
-                        android:id="@+id/foodQuantitySpinner"
+                    <EditText
+                        android:id="@+id/foodQuantitySpinner3"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -332,6 +334,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="95dp"
+                        android:inputType="number"
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
@@ -432,8 +435,8 @@
                         android:layout_below="@id/foodPrice"/>
 
                     <!-- Quantity Spinner -->
-                    <Spinner
-                        android:id="@+id/foodQuantitySpinner"
+                    <EditText
+                        android:id="@+id/foodQuantitySpinner4"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -441,6 +444,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="95dp"
+                        android:inputType="number"
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
@@ -541,8 +545,8 @@
                         android:layout_below="@id/foodPrice"/>
 
                     <!-- Quantity Spinner -->
-                    <Spinner
-                        android:id="@+id/foodQuantitySpinner"
+                    <EditText
+                        android:id="@+id/foodQuantitySpinner5"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -550,6 +554,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="95dp"
+                        android:inputType="number"
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 

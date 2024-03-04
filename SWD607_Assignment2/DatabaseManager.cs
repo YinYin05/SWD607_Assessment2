@@ -45,6 +45,10 @@ namespace Person_DataAndriod
         {
             return connection.Table<SignUp>().FirstOrDefault(u => u.Id == User_Id);
         }
+        public SignUp GetUserName(string username)
+        {
+            return connection.Table<SignUp>().FirstOrDefault(d=>d.UserName == username);
+        }
 
         public void UpdateUser(SignUp Updateuser)
         {
