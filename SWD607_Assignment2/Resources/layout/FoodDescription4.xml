@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"        
                     android:background="@drawable/image_round_corner"
-                    android:src="@drawable/southland_cheese2"
+                    android:src="@drawable/hokey_pokey2"
                     android:scaleType="fitCenter"                    
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
@@ -68,7 +68,7 @@
                     android:id="@+id/textViewDishName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/food_name"
+                    android:text="@string/food_name4"
                     android:layout_below="@+id/imageView11"
                     android:textSize="25sp"
                     android:textStyle="bold"
@@ -79,7 +79,7 @@
                     android:id="@+id/textViewDishPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/food_price"
+                    android:text="@string/food_price4"
                     android:layout_below="@+id/imageView11"
                     android:textSize="25sp"
                     android:layout_marginStart="20dp"
@@ -112,7 +112,7 @@
                         android:layout_width="5dp"
                         android:layout_height="100dp"            
                         android:layout_margin="5dp"
-                        android:background="@drawable/southland_cheese1"
+                        android:background="@drawable/hokey_pokey1"
                         android:contentDescription="@string/imageViewLogo"
                         android:layout_weight="0.5"/>
 
@@ -121,7 +121,7 @@
                         android:layout_width="5dp"
                         android:layout_height="100dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/southland_cheese3"
+                        android:background="@drawable/hokey_pokey4"
                         android:contentDescription="@string/imageViewLogo"
                         android:layout_weight="0.5"/>
 
@@ -130,7 +130,7 @@
                         android:layout_width="5dp"
                         android:layout_height="100dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/southland_cheese4"
+                        android:background="@drawable/hokey_pokey3"
                         android:contentDescription="@string/imageViewLogo"
                         android:layout_weight="0.5"/>       
                 </LinearLayout> 
@@ -162,7 +162,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"        
                             android:background="@drawable/image_round_corner"
-                            android:src="@drawable/southland_cheese_rolls_ingredients"
+                            android:src="@drawable/hokey_pokey_ingredients"
                             android:scaleType="fitCenter"                    
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
@@ -185,7 +185,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"        
                             android:background="@drawable/image_round_corner"
-                            android:src="@drawable/southland_cheese_rolls_recipe"
+                            android:src="@drawable/hokey_pokey_recipe"
                             android:scaleType="fitCenter"                    
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
