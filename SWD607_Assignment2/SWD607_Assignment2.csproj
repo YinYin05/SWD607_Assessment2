@@ -55,6 +55,10 @@
     <None Remove="Resources\layout\AddEdit.xml" />
     <None Remove="Resources\layout\ContactUs.xml" />
     <None Remove="Resources\layout\FoodDescription.xml" />
+    <None Remove="Resources\layout\FoodDescription2.xml" />
+    <None Remove="Resources\layout\FoodDescription3.xml" />
+    <None Remove="Resources\layout\FoodDescription4.xml" />
+    <None Remove="Resources\layout\FoodDescription5.xml" />
     <None Remove="Resources\layout\Menu.xml" />
     <None Remove="Resources\layout\OrderDetail.xml" />
     <None Remove="Resources\layout\PaymentOption.xml" />

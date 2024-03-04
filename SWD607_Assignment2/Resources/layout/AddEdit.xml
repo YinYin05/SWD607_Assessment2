@@ -15,10 +15,7 @@
             android:background="@android:color/white"
             android:padding="2dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white">
+           
 
             <!-- Back Button -->
             <ImageButton
@@ -42,9 +39,9 @@
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_centerHorizontal="false"
+                android:layout_gravity="center"                
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="70dp" />
+                android:layout_marginTop="20dp" />
 
             <TextView
                 android:id="@+id/textAucklandRangers"
@@ -55,7 +52,7 @@
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:layout_below="@+id/textViewReservation"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"                
                 android:layout_marginTop="30dp" />
 
             <!-- Date Section -->
@@ -167,7 +164,7 @@
                 android:layout_centerHorizontal="true"
                 android:textAllCaps="false"/> 
 
-            </RelativeLayout>
+           
 
         </RelativeLayout>
 
