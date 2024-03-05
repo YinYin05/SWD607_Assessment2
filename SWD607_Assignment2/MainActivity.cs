@@ -233,15 +233,18 @@ namespace Auckland_Rangers
         ImageView food1, food2, food3, food4, food5;
         Button deletebtn1, deletebtn2, deletebtn3, deletebtn4, deletebtn5, btnPayment;
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
-        TextView cost1, cost2, cost3, cost4, cost5;
-        int Quan1, Quan2, Quan3, Quan4, Quan5;
-        int result1, result2, result3, result4, result5;
+        TextView cost1, cost2, cost3, cost4, cost5, orderdate, subtotal,totalGST,totalCost;
+        int Quan1, Quan2, Quan3, Quan4, Quan5, result1, result2, result3, result4, result5;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             {
                 SetContentView(Resource.Layout.OrderDetail);
+                orderdate = FindViewById<TextView>(Resource.Id.textViewCurrentDate);
+                subtotal = FindViewById<TextView>(Resource.Id.textViewSubTotalAmount);
+                totalGST = FindViewById<TextView>(Resource.Id.textViewTotalGST);
+                totalCost = FindViewById<TextView>(Resource.Id.textViewTotalAmount);
                 btnPayment = FindViewById<Button>(Resource.Id.buttonProceedToPayment);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
@@ -285,40 +288,7 @@ namespace Auckland_Rangers
                 deletebtn4.Click += delete4Pressed;
                 deletebtn5.Click += delete5Pressed;
 
-                
-                /*if (Int32.TryParse(CheeseRoll.Text, out Quan1))
-                {
-                    Quan1 = Convert.ToInt32(CheeseRoll.Text);
-                }
-                if (Int32.TryParse(CheeseRoll.Text, out Quan2))
-                {
-                    Quan2 = Convert.ToInt32(Pavlova.Text);
-                }
-                if (Int32.TryParse(CheeseRoll.Text, out Quan3))
-                {
-                    Quan3 = Convert.ToInt32(OnionDip.Text);
-                }
-                if (Int32.TryParse(CheeseRoll.Text, out Quan4))
-                {
-                    Quan4 = Convert.ToInt32(HokeyPokey.Text);
-                }
-                if (Int32.TryParse(CheeseRoll.Text, out Quan5))
-                {
-                    Quan5 = Convert.ToInt32(Fritter.Text);
-                }
-
-                result1 = Quan1 * 16;
-                result2 = Quan2 * 25;
-                result3 = Quan3 * 11;
-                result4 = Quan4 * 20;
-                result5 = Quan5 * 23;
-
-                cost1.Text = result1.ToString();
-                cost2.Text = result2.ToString();
-                cost3.Text = result3.ToString();
-                cost4.Text = result4.ToString();
-                cost5.Text = result5.ToString();*/
-
+                orderdate.Text = DateTime.Now.ToString();
 
             }
 
@@ -332,6 +302,14 @@ namespace Auckland_Rangers
             }
             result1 = Quan1 * 16;
             cost1.Text = "$ " + result1.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            float TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
+
+
         }
         private void delete2Pressed(object sender, EventArgs e)
         {
@@ -342,6 +320,12 @@ namespace Auckland_Rangers
             }
             result2 = Quan2 * 25;
             cost2.Text = "$ " + result2.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            float TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
         }
         private void delete3Pressed(object sender, EventArgs e)
         {
@@ -351,6 +335,12 @@ namespace Auckland_Rangers
             }
             result3 = Quan3 * 11;
             cost3.Text = "$ " + result3.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            float TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
         }
         private void delete4Pressed(object sender, EventArgs e)
         {
@@ -361,6 +351,12 @@ namespace Auckland_Rangers
             }
             result4 = Quan4 * 20;
             cost4.Text = "$ " + result4.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            float TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
         }
         private void delete5Pressed(object sender, EventArgs e)
         {
@@ -371,6 +367,12 @@ namespace Auckland_Rangers
             }
             result5 = Quan5 * 23;
             cost5.Text = "$ " + result5.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            float TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
         }
 
         private void Food1description(Object sender, EventArgs e)
