@@ -44,7 +44,7 @@
 	<string name="food_price5">Price : $23</string>	
 	<string name="food_size">Size : Regular</string>	
 	<string name="food_quantity">Quantity</string>
-	<string name="small_delete">Del</string>
+	<string name="small_delete">Add</string>
 	<string name="date_print">Date</string>
 	<string name="date_print_2">dd-mm-yyyy</string>
 	<string name="order_number">Order #</string>
@@ -91,6 +91,12 @@
 	<string name="reservation_tag">Make Reservation</string>
 	<string name="add_button">Add</string>
 	<string name="edit_button">Edit</string>
+	<string-array name="Table_Number">
+		<item>Table 1</item>
+		<item>Table 2</item>
+		<item>Table 3</item>
+		<item>Table 4</item>
+	</string-array>
 	
 	
 	

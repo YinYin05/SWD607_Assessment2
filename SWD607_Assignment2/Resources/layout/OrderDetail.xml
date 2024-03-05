@@ -106,7 +106,7 @@
 
                     <!-- Quantity Spinner -->
                     <EditText
-                        android:id="@+id/foodQuantitySpinner1"
+                        android:id="@+id/foodQuantity1"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -137,7 +137,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost"
+                        android:id="@+id/foodCost1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
@@ -216,7 +216,7 @@
 
                     <!-- Quantity Spinner -->
                     <EditText
-                        android:id="@+id/foodQuantitySpinner2"
+                        android:id="@+id/foodQuantity2"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -230,7 +230,7 @@
 
                     <!-- Delete Button -->
                     <Button
-                        android:id="@+id/deleteButton"
+                        android:id="@+id/deleteButton2"
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:text="@string/small_delete"
@@ -247,7 +247,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost"
+                        android:id="@+id/foodCost2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
@@ -326,7 +326,7 @@
 
                     <!-- Quantity Spinner -->
                     <EditText
-                        android:id="@+id/foodQuantitySpinner3"
+                        android:id="@+id/foodQuantity3"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -340,7 +340,7 @@
 
                     <!-- Delete Button -->
                     <Button
-                        android:id="@+id/deleteButton"
+                        android:id="@+id/deleteButton3"
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:text="@string/small_delete"
@@ -357,7 +357,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost"
+                        android:id="@+id/foodCost3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
@@ -436,7 +436,7 @@
 
                     <!-- Quantity Spinner -->
                     <EditText
-                        android:id="@+id/foodQuantitySpinner4"
+                        android:id="@+id/foodQuantity4"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -450,11 +450,11 @@
 
                     <!-- Delete Button -->
                     <Button
-                        android:id="@+id/deleteButton"
+                        android:id="@+id/deleteButton4"
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:text="@string/small_delete"
-                        android:textSize="20sp"
+                        android:textSize="20sp"                    
                         android:textStyle="bold"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
@@ -467,7 +467,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost"
+                        android:id="@+id/foodCost4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
@@ -546,7 +546,7 @@
 
                     <!-- Quantity Spinner -->
                     <EditText
-                        android:id="@+id/foodQuantitySpinner5"
+                        android:id="@+id/foodQuantity5"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -560,7 +560,7 @@
 
                     <!-- Delete Button -->
                     <Button
-                        android:id="@+id/deleteButton"
+                        android:id="@+id/deleteButton5"
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:text="@string/small_delete"
@@ -577,7 +577,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost"
+                        android:id="@+id/foodCost5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
