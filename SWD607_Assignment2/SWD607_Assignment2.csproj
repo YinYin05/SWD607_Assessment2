@@ -71,6 +71,7 @@
     <None Remove="Resources\layout\PaymentOption.xml" />
     <None Remove="Resources\layout\Profile.xml" />
     <None Remove="Resources\layout\Reservation.xml" />
+    <None Remove="Resources\layout\Search.xml" />
     <None Remove="Resources\layout\SignIn.xml" />
     <None Remove="Resources\layout\SignUp.xml" />
   </ItemGroup>
