@@ -7,6 +7,7 @@ using Org.Apache.Http.Authentication;
 using static Android.Provider.ContactsContract.CommonDataKinds;
 using Android.Provider;
 using System.Reflection.Emit;
+using FoodApp_Andriod_with_RESTful;
 namespace Auckland_Rangers
 
 {
@@ -158,9 +159,16 @@ namespace Auckland_Rangers
             btnHome.Click += HomePressed;
             btnContact.Click += ContactUsPressed;
             btnProfile.Click += ProfilePressed;
+            btnSearch.Click += SearchPressed;
 
             
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void MainCartPressed(Object sender, EventArgs e)
         {

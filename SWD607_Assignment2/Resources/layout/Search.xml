@@ -70,7 +70,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:textColorHint="@android:color/darker_gray"
         android:background="@drawable/white_button_border"
         android:hint="@string/enter_protein"

@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
+using SWD607_Assignment2;
 
 namespace FoodApp_Andriod_with_RESTful
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
-    public class MainActivity : Activity
+    public class SearchActivity : Activity
     {
         private EditText search_Item_editText, search_ItemDiet_editText, SelectItem_Protien_EditText;
         private Button search_Button;
@@ -13,7 +14,7 @@ namespace FoodApp_Andriod_with_RESTful
         private const string ApiKey = "d6838312a8c94c7180e415e47b426054";
         private const string ApiUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
-        protected override void OnCreate(Bundle? savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -22,7 +23,7 @@ namespace FoodApp_Andriod_with_RESTful
 
             search_Item_editText = FindViewById<EditText>(Resource.Id.SelectItem_EditText);
             search_ItemDiet_editText = FindViewById<EditText>(Resource.Id.SelectItem_Diet_EditText);
-            SelectItem_Protien_EditText = FindViewById<EditText>(Resource.Id.SelectItem_Protien_EditText);
+            SelectItem_Protien_EditText = FindViewById<EditText>(Resource.Id.SelectItem_Protein_EditText);
             search_Button = FindViewById<Button>(Resource.Id.btn_Serach);
             Searched_Items_TextView = FindViewById<TextView>(Resource.Id.SearchedItems_TextView);
 
