@@ -158,6 +158,15 @@
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="10dp" />
 
+                        <ExpandableListView
+                            android:minWidth="25px"
+                            android:minHeight="25px"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/expandableListView1" />
+
+
+
                         <ImageView      
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"        

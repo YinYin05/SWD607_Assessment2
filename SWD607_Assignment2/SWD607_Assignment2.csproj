@@ -38,6 +38,12 @@
     <None Remove="Resources\drawable\pavlova4.jpg" />
     <None Remove="Resources\drawable\Profile_Button_Image.JPG" />
     <None Remove="Resources\drawable\Search_Button_Image.JPG" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad1.png" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad2.png" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad3.png" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad4.png" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad_Ingredients.jpg" />
+    <None Remove="Resources\drawable\Sesame_Flank_Steak_Salad_Recipe.jpg" />
     <None Remove="Resources\drawable\southland_cheese1.jpg" />
     <None Remove="Resources\drawable\southland_cheese2.jpg" />
     <None Remove="Resources\drawable\southland_cheese3.jpg" />
@@ -59,6 +65,7 @@
     <None Remove="Resources\layout\FoodDescription3.xml" />
     <None Remove="Resources\layout\FoodDescription4.xml" />
     <None Remove="Resources\layout\FoodDescription5.xml" />
+    <None Remove="Resources\layout\FoodDescription6.xml" />
     <None Remove="Resources\layout\Menu.xml" />
     <None Remove="Resources\layout\OrderDetail.xml" />
     <None Remove="Resources\layout\PaymentOption.xml" />
@@ -66,9 +73,9 @@
     <None Remove="Resources\layout\Reservation.xml" />
     <None Remove="Resources\layout\SignIn.xml" />
     <None Remove="Resources\layout\SignUp.xml" />
-    <None Remove="Resources\layout\Test_Mode.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.8" />
   </ItemGroup>
