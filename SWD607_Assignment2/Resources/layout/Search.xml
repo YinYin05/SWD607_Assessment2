@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+    <TextView
+        android:text="@string/enter_recipe_search"        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:hint="@string/enter_recipe"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="10dp"       
+        android:id="@+id/SelectItem_EditText" />
+    <TextView
+        android:text="@string/enter_diet_search"
+        android:layout_marginStart="25dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:hint="@string/enter_diet"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/SelectItem_Diet_EditText" />
+    <TextView
+        android:text="@string/enter_protein_search"
+        android:layout_marginStart="25dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/white_button_border"
+        android:hint="@string/enter_protein"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/SelectItem_Protein_EditText" />
+    <Button
+        android:text="Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@drawable/gray_button"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:layout_margin="20dp"
+        android:id="@+id/btn_Serach" />
+    <TextView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/white_button_border"
+        android:id="@+id/SearchedItems_TextView" />
+
+</LinearLayout>

@@ -100,7 +100,11 @@
 		<item>Table 4</item>
 	</string-array>
 	<string name="ingredients_whitebait">1 cup – flour |1/2 teaspoon – baking powder |1/2 teaspoon – salt |1 – egg |1/2 cup – milk |125 g – whitebait |2 tablespoons – oil |lemon wedges</string>
-	
-	
+	<string name="enter_recipe">Recipe</string>
+	<string name="enter_recipe_search">Please enter the recipe name to search</string>
+	<string name="enter_diet">Diet Type</string>
+	<string name="enter_diet_search">Please enter diet type</string>
+	<string name="enter_protein">Protein Value</string>
+	<string name="enter_protein_search">Please enter the minimum protien value</string>
 	
 </resources>
