@@ -12,12 +12,12 @@
     android:layout_marginEnd="40dp"
     android:background="@drawable/light_blue_color_round">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <!-- Company Logo -->
+            <!-- Company Logo -->
             <ImageView
                 android:id="@+id/imageViewLogo"
                 android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:contentDescription="@string/imageViewLogo"
                 android:layout_marginTop="30dp"/>
 
-        <!-- Title : Company -->
+            <!-- Title : Company -->
             <TextView
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_below="@+id/textViewTitle1"
                 android:layout_marginTop="25dp" />
 
-        <!-- Username EditText -->
+            <!-- Username EditText -->
             <EditText
                 android:id="@+id/editTextUsername"
                 android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:paddingStart="16dp"
                 android:paddingBottom="10dp"/>
 
-        <!-- Password EditText -->
+            <!-- Password EditText -->
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
@@ -121,6 +121,7 @@
                 android:paddingBottom="16dp" />
 
             </RelativeLayout>
+
     </FrameLayout>    
 
     <!-- Navigation Selection -->

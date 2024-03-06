@@ -57,8 +57,7 @@
             android:contentDescription="@string/imageViewLogo"
             android:layout_margin="5dp"
             android:background="@drawable/whitebait_fritters3"            
-            android:layout_weight="0.5"
-            />
+            android:layout_weight="0.5"/>
 
         <ImageView
             android:id="@+id/imageView2"
@@ -77,8 +76,7 @@
             android:contentDescription="@string/imageViewLogo"
             android:layout_margin="5dp"
             android:background="@drawable/pavlova4"            
-            android:layout_weight="0.5"
-            />       
+            android:layout_weight="0.5"/>       
     </LinearLayout>   
 
         <FrameLayout
@@ -90,25 +88,25 @@
             android:background="@drawable/light_blue_color_round"
             android:layout_centerHorizontal="true">
 
-        <TextView
-            android:id="@+id/textViewExplore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/explore_print"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:textColor="@android:color/black"      
-            android:layout_marginStart="20dp" />
-        <TextView
-            android:id="@+id/textViewMoreOptions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/more_options"
-            android:textSize="20sp"            
-            android:layout_marginTop="5dp"            
-            android:textColor="@android:color/black"      
-            android:layout_marginStart="440dp" />
+            <TextView
+                android:id="@+id/textViewExplore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explore_print"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/black"      
+                android:layout_marginStart="20dp" />
+            <TextView
+                android:id="@+id/textViewMoreOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more_options"
+                android:textSize="20sp"            
+                android:layout_marginTop="5dp"            
+                android:textColor="@android:color/black"      
+                android:layout_marginStart="440dp" />
 
                     <!-- Layout -->
                     <RelativeLayout
@@ -145,113 +143,112 @@
                             android:textAllCaps="false"/>
                     </RelativeLayout>
 
-        <TextView
-            android:id="@+id/textViewFeaturedItems"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/featured_items"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="130dp"
-            android:textColor="@android:color/black"      
-            android:layout_marginStart="20dp" />
-         <TextView
-            android:id="@+id/textViewAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view_all"
-            android:textSize="20sp"            
-            android:layout_marginTop="130dp"            
-            android:textColor="@android:color/black"      
-            android:layout_marginStart="490dp" />
+                    <TextView
+                        android:id="@+id/textViewFeaturedItems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/featured_items"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="130dp"
+                        android:textColor="@android:color/black"      
+                        android:layout_marginStart="20dp" />
+                    <TextView
+                        android:id="@+id/textViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_all"
+                        android:textSize="20sp"            
+                        android:layout_marginTop="130dp"            
+                        android:textColor="@android:color/black"      
+                        android:layout_marginStart="490dp" />
 
-        <FrameLayout
-            android:id="@+id/frameLayoutFeature1"
-            android:layout_width="200dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="170dp"
-            android:layout_below="@+id/imageSection"
-            android:background="@drawable/gray_button">
+                    <FrameLayout
+                        android:id="@+id/frameLayoutFeature1"
+                        android:layout_width="200dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="170dp"
+                        android:layout_below="@+id/imageSection"
+                        android:background="@drawable/gray_button">
 
-            <ImageView
-            android:id="@+id/imageView41"
-            android:layout_width="170dp"
-            android:layout_height="95dp"
-            android:layout_margin="15dp"
-            android:contentDescription="@string/imageViewLogo"    
-            android:background="@drawable/hokey_pokey4" />
+                        <ImageView
+                        android:id="@+id/imageView41"
+                        android:layout_width="170dp"
+                        android:layout_height="95dp"
+                        android:layout_margin="15dp"
+                        android:contentDescription="@string/imageViewLogo"    
+                        android:background="@drawable/hokey_pokey4" />
 
-            <TextView
-            android:id="@+id/textViewFeature1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" $20 only "
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:background="@android:color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"            
-            android:textColor="@android:color/black"      
-            />
-            <ImageButton
-            android:id="@+id/buttonCartFeature1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cart_button_image"
-            android:contentDescription="@string/imageViewLogo"           
-            android:textColor="@android:color/black"
-            android:background="@drawable/white_button_border"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="116dp"/>            
-            </FrameLayout>
+                        <TextView
+                        android:id="@+id/textViewFeature1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" $20 only "
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:background="@android:color/white"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="120dp"            
+                        android:textColor="@android:color/black"/>
 
-        <FrameLayout
-            android:id="@+id/frameLayoutFeature2"
-            android:layout_width="200dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="170dp"
-            android:layout_below="@+id/imageSection"
-            android:background="@drawable/gray_button">
+                        <ImageButton
+                        android:id="@+id/buttonCartFeature1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/cart_button_image"
+                        android:contentDescription="@string/imageViewLogo"           
+                        android:textColor="@android:color/black"
+                        android:background="@drawable/white_button_border"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="116dp"/>            
+                    </FrameLayout>
 
-            <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="170dp"
-            android:layout_height="95dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/onion_dip1" 
-            android:contentDescription="@string/imageViewLogo"/>
+            <FrameLayout
+                android:id="@+id/frameLayoutFeature2"
+                android:layout_width="200dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="310dp"
+                android:layout_marginTop="170dp"
+                android:layout_below="@+id/imageSection"
+                android:background="@drawable/gray_button">
 
-            <TextView
-            android:id="@+id/textViewFeature2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" $11 only "
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:background="@android:color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"            
-            android:textColor="@android:color/black"      
-            />
-            <ImageButton
-            android:id="@+id/buttonCartFeature2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/cart_button_image"           
-            android:textColor="@android:color/black"
-            android:contentDescription="@string/imageViewLogo"
-            android:background="@drawable/white_button_border"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="116dp"/>
+                <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="170dp"
+                android:layout_height="95dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/onion_dip1" 
+                android:contentDescription="@string/imageViewLogo"/>
+
+                <TextView
+                android:id="@+id/textViewFeature2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" $11 only "
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:background="@android:color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="120dp"            
+                android:textColor="@android:color/black"/>
+
+                <ImageButton
+                android:id="@+id/buttonCartFeature2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart_button_image"           
+                android:textColor="@android:color/black"
+                android:contentDescription="@string/imageViewLogo"
+                android:background="@drawable/white_button_border"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="116dp"/>
 
             </FrameLayout>
 
         </FrameLayout>
-
 
     <!-- Navigation Section -->
     <LinearLayout

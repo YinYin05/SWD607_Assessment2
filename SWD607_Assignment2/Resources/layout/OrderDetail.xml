@@ -104,7 +104,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity1"
                         android:layout_width="80dp"
@@ -118,7 +118,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton"
                         android:layout_width="50dp"
@@ -214,7 +214,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity2"
                         android:layout_width="80dp"
@@ -228,7 +228,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton2"
                         android:layout_width="50dp"
@@ -324,7 +324,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity3"
                         android:layout_width="80dp"
@@ -338,7 +338,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton3"
                         android:layout_width="50dp"
@@ -434,7 +434,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity4"
                         android:layout_width="80dp"
@@ -448,7 +448,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton4"
                         android:layout_width="50dp"
@@ -544,7 +544,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity5"
                         android:layout_width="80dp"
@@ -558,7 +558,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton5"
                         android:layout_width="50dp"
@@ -654,7 +654,7 @@
                         android:textColor="@android:color/black"
                         android:layout_below="@id/foodPrice"/>
 
-                    <!-- Quantity Spinner -->
+                    <!-- Quantity -->
                     <EditText
                         android:id="@+id/foodQuantity6"
                         android:layout_width="80dp"
@@ -668,7 +668,7 @@
                         android:background="@drawable/white_button_border_gray"
                         android:layout_toRightOf="@+id/foodQuantityLabel"/>
 
-                    <!-- Delete Button -->
+                    <!-- Add Button -->
                     <Button
                         android:id="@+id/deleteButton6"
                         android:layout_width="50dp"
@@ -893,7 +893,6 @@
 
     </ScrollView>
                
-
     <!-- Navigation Section -->
     <LinearLayout
         android:id="@+id/navigationSection"

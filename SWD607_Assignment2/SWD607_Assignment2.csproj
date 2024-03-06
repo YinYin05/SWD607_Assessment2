@@ -11,6 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\drawable\Back_Button_Image.JPG" />
+    <None Remove="Resources\drawable\cards.jpg" />
     <None Remove="Resources\drawable\Cart_Button_Image.JPG" />
     <None Remove="Resources\drawable\Close_Button_Image.JPG" />
     <None Remove="Resources\drawable\Contact_Button_Image.JPG" />
@@ -60,6 +61,7 @@
     <None Remove="Resources\drawable\white_button_no_border.xml" />
     <None Remove="Resources\layout\AddEdit.xml" />
     <None Remove="Resources\layout\ContactUs.xml" />
+    <None Remove="Resources\layout\CreditDebit.xml" />
     <None Remove="Resources\layout\FoodDescription.xml" />
     <None Remove="Resources\layout\FoodDescription2.xml" />
     <None Remove="Resources\layout\FoodDescription3.xml" />

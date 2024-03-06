@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <!-- Food Image -->
                 <ImageView      
                     android:layout_width="match_parent"
                     android:layout_height="300dp"        
@@ -64,6 +65,7 @@
                     android:id="@+id/imageView11"
                     android:contentDescription="@string/imageViewLogo"/>
 
+                <!-- Food Name and Price -->
                 <TextView
                     android:id="@+id/textViewDishName"
                     android:layout_width="wrap_content"
@@ -98,6 +100,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp" />
 
+                <!-- Food Photos -->
                 <LinearLayout
                     android:id="@+id/imageSection1"
                     android:layout_width="match_parent"
@@ -147,6 +150,7 @@
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="20dp" />
 
+                        <!-- Food Ingredients-->
                         <TextView
                             android:id="@+id/textViewDishIngredients"
                             android:layout_width="wrap_content"
@@ -170,6 +174,7 @@
                             android:id="@+id/imageView55"
                             android:contentDescription="@string/imageViewLogo"/>                             
 
+                        <!-- Recipe -->
                         <TextView
                             android:id="@+id/textViewDishRecipe"
                             android:layout_width="wrap_content"
