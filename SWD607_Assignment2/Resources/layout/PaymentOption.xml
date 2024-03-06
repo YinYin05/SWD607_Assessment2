@@ -139,31 +139,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp" />
     
-    <!-- Rating Section -->
-    <LinearLayout
-        android:id="@+id/RatingSection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"        
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textViewRating">
-
-        <RatingBar
+        <LinearLayout
+            android:id="@+id/RatingSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ratingBar1"
-            android:progressTint="#FFCC01"
-            android:rating="3"
-            android:numStars="5"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:layout_gravity="center"                        
-            android:clickable="true"            
-            android:stepSize="1"/>
-    </LinearLayout>
+            android:background="@android:color/white"        
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textViewRating">
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar1"
+                android:progressTint="#FFCC01"
+                android:rating="3"
+                android:numStars="5"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:layout_gravity="center"                        
+                android:clickable="true"            
+                android:stepSize="1"/>
+        </LinearLayout>
 
     <!-- Submit Rating -->
     <Button

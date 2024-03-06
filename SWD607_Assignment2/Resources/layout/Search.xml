@@ -20,6 +20,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"/>
     
+    <!-- Recipe Search -->
     <TextView
         android:text="@string/enter_recipe_search"        
         android:layout_width="match_parent"
@@ -45,6 +46,8 @@
         android:paddingStart="16dp"
         android:paddingBottom="10dp"       
         android:id="@+id/SelectItem_EditText" />
+
+    <!-- Diet Type Search -->
     <TextView
         android:text="@string/enter_diet_search"
         android:layout_marginStart="25dp"
@@ -70,6 +73,8 @@
         android:paddingStart="16dp"
         android:paddingBottom="10dp"
         android:id="@+id/SelectItem_Diet_EditText" />
+
+    <!-- Set Minimum Protein Value -->
     <TextView
         android:text="@string/enter_protein_search"
         android:layout_marginStart="25dp"
@@ -94,8 +99,10 @@
         android:paddingStart="16dp"
         android:paddingBottom="10dp"
         android:id="@+id/SelectItem_Protein_EditText" />
+    
+    <!-- Search Button -->   
     <Button
-        android:text="Search"
+        android:text="@string/search_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -104,7 +111,10 @@
         android:textColor="@android:color/white"
         android:padding="8dp"
         android:layout_margin="20dp"
-        android:id="@+id/btn_Serach" />
+        android:id="@+id/btn_Search"
+        android:textAllCaps="false"/>
+
+    <!-- Search Result -->
     <TextView
         android:minWidth="25px"
         android:minHeight="25px"

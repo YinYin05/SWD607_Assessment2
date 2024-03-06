@@ -913,7 +913,7 @@ namespace Auckland_Rangers
             search_Item_editText = FindViewById<EditText>(Resource.Id.SelectItem_EditText);
             search_ItemDiet_editText = FindViewById<EditText>(Resource.Id.SelectItem_Diet_EditText);
             SelectItem_Protien_EditText = FindViewById<EditText>(Resource.Id.SelectItem_Protein_EditText);
-            search_Button = FindViewById<Button>(Resource.Id.btn_Serach);
+            search_Button = FindViewById<Button>(Resource.Id.btn_Search);
             Searched_Items_TextView = FindViewById<TextView>(Resource.Id.SearchedItems_TextView);
 
             search_Button.Click += async (sender, e) =>

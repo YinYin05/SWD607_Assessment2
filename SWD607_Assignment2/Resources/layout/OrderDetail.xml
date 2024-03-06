@@ -893,7 +893,6 @@
 
     </ScrollView>
                
-
     <!-- Navigation Section -->
     <LinearLayout
         android:id="@+id/navigationSection"

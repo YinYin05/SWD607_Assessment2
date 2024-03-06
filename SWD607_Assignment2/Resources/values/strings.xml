@@ -119,7 +119,7 @@
 	<string name="cancel_button">Cancel</string>
 	<string name="proceed_button">Proceed</string>
 	<string name="cvc_what">What is this?</string>
-	
+	<string name="search_button">Search</string>
 	
 	
 </resources>
