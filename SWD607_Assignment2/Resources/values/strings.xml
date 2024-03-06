@@ -106,5 +106,20 @@
 	<string name="enter_diet_search">Please enter diet type</string>
 	<string name="enter_protein">Protein Value</string>
 	<string name="enter_protein_search">Please enter the minimum protien value</string>
+	<string name="credit_debit">Credit / Debit Card Payment</string>
+	<string name="card_number">Card Number:*</string>
+	<string name="card_number_preview">1234 5678 9012 3456</string>
+	<string name="name_on_card">Name On Card:*</string>
+	<string name="name_on_card_preview">Enter name</string>
+	<string name="expiry_date">Expiry Date:*</string>
+	<string name="expiry_date_month">MM</string>
+	<string name="expiry_date_year">YY</string>
+	<string name="card_cvc">CVC:</string>
+	<string name="card_cvc_preview">cvc</string>
+	<string name="cancel_button">Cancel</string>
+	<string name="proceed_button">Proceed</string>
+	<string name="cvc_what">What is this?</string>
+	
+	
 	
 </resources>
