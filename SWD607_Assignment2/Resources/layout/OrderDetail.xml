@@ -733,8 +733,7 @@
                         android:layout_marginTop="1dp"
                         android:layout_marginStart="10dp"/>        
                     </RelativeLayout>
-
-                    <!-- Order Number -->
+                    
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
