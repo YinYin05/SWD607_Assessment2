@@ -134,6 +134,7 @@
                 android:layout_marginStart="17dp"
                 android:layout_marginEnd="17dp" />
 
+            <!-- Send Button -->
             <Button
                 android:id="@+id/buttonSend"
                 android:layout_width="match_parent"
@@ -221,6 +222,7 @@
                     android:layout_marginTop="1dp"
                     android:paddingStart="10dp"/>
 
+                <!-- Store Phone Number -->
                 <TextView
                     android:id="@+id/textViewPhoneNumber"
                     android:layout_width="wrap_content"
@@ -243,6 +245,7 @@
                     android:layout_marginTop="1dp"
                     android:paddingStart="10dp"/>
 
+                <!-- Store Open Hours -->
                 <TextView
                     android:id="@+id/textViewOpeningHours"
                     android:layout_width="wrap_content"
@@ -276,6 +279,7 @@
                     android:layout_marginTop="1dp"
                     android:paddingStart="10dp"/>
 
+                <!-- Restaurant Image 2 -->
                 <TextView
                     android:id="@+id/textViewFindUs"
                     android:layout_width="wrap_content"

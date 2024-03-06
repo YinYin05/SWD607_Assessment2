@@ -11,32 +11,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <!-- Back Button -->
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/back_button_image"
-        android:textColor="@android:color/black"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/buttonBack"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_button_image"
+            android:textColor="@android:color/black"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/buttonBack"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
 
-    <!-- Title : Payment -->
-    <TextView
-        android:id="@+id/textViewCardPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/credit_debit"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        <!-- Title : Payment -->
+        <TextView
+            android:id="@+id/textViewCardPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_debit"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
     </RelativeLayout>
-        
+    
+    <!-- Card Logo -->
     <ImageView      
         android:layout_width="match_parent"
         android:layout_height="200dp"        
@@ -48,6 +49,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
         android:id="@+id/imageView1" />
+
+    <!-- Card Number -->
     <TextView
         android:text="@string/card_number"        
         android:layout_width="match_parent"
@@ -73,6 +76,8 @@
         android:paddingStart="16dp"
         android:paddingBottom="10dp"       
         android:id="@+id/CardNumber_EditText" />
+    
+    <!-- Name on Card -->   
     <TextView
         android:text="@string/name_on_card"
         android:layout_marginStart="25dp"
@@ -103,67 +108,100 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
-    <TextView
-        android:text="@string/expiry_date"
-        android:layout_marginStart="25dp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
 
-    <EditText
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:textColorHint="@android:color/darker_gray"
-        android:background="@drawable/white_button_border"
-        android:hint="@string/expiry_date_month"
-        android:inputType="number"
-        android:gravity="center"
-        android:textSize="25sp"        
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginEnd="20dp"
-        android:paddingTop="10dp"
-        android:paddingStart="1dp"
-        android:paddingBottom="10dp"
-        android:id="@+id/ExpiryMonthEditText" />
+        <!-- Card Expiry Date -->
+        <TextView
+            android:text="@string/expiry_date"
+            android:layout_marginStart="25dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
 
-    <EditText
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:textColorHint="@android:color/darker_gray"
-        android:background="@drawable/white_button_border"
-        android:hint="@string/expiry_date_year"
-        android:inputType="number"
-        android:gravity="center"
-        android:textSize="25sp"        
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginEnd="20dp"
-        android:paddingTop="10dp"
-        android:paddingStart="1dp"
-        android:paddingBottom="10dp"
-        android:id="@+id/ExpiryYearEditText" />   
+        <EditText
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:background="@drawable/white_button_border"
+            android:hint="@string/expiry_date_month"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="25sp"        
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingStart="1dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/ExpiryMonthEditText" />
 
-    <EditText
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:textColorHint="@android:color/darker_gray"
-        android:background="@drawable/white_button_border"
-        android:hint="@string/card_cvc_preview"
-        android:gravity="center"
-        android:textSize="25sp"        
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginEnd="20dp"
-        android:paddingTop="10dp"
-        android:paddingStart="1dp"
-        android:paddingBottom="10dp"
-        android:layout_below="@+id/textView3"
-        android:id="@+id/CvcEditText" />            
+        <EditText
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:background="@drawable/white_button_border"
+            android:hint="@string/expiry_date_year"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="25sp"        
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingStart="1dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/ExpiryYearEditText" />
+    </RelativeLayout>
+    
+    <!-- Card CVC -->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+        <TextView
+            android:text="@string/card_cvc"
+            android:layout_marginStart="25dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="13dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView39" />
+
+        <EditText
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:textColorHint="@android:color/darker_gray"
+            android:background="@drawable/white_button_border"
+            android:hint="@string/card_cvc_preview"
+            android:inputType="number"
+            android:gravity="center"
+            android:textSize="25sp"        
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingStart="1dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/textView3"
+            android:id="@+id/CvcEditText" />
+        <TextView
+            android:text="@string/cvc_what"            
+            android:textColor="@android:color/holo_red_light"
+            android:gravity="center_vertical"
+            android:layout_marginTop="13dp"
+            android:paddingTop="5dp"
+            android:layout_marginStart="300dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView49" />
     </RelativeLayout>
 
     <LinearLayout
@@ -176,6 +214,7 @@
         android:layout_marginTop="20dp"
         android:layout_alignParentBottom="true">
  
+        <!-- Cancel Button -->
         <Button
             android:id="@+id/buttonHome"
             android:layout_width="0dp"
@@ -188,8 +227,9 @@
             android:layout_margin="16dp"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textAllCaps="false"/>/>
+            android:textAllCaps="false"/>
 
+        <!-- Proceed Button -->
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="0dp"
