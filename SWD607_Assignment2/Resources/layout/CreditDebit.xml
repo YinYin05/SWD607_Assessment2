@@ -146,21 +146,7 @@
         android:paddingTop="10dp"
         android:paddingStart="1dp"
         android:paddingBottom="10dp"
-        android:id="@+id/ExpiryYearEditText" />
-
-    <TextView
-        android:text="@string/card_cvc"
-        android:layout_marginStart="25dp"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textView3"
-        android:id="@+id/textView4" />
+        android:id="@+id/ExpiryYearEditText" />   
 
     <EditText
         android:layout_width="90dp"
@@ -177,22 +163,7 @@
         android:paddingStart="1dp"
         android:paddingBottom="10dp"
         android:layout_below="@+id/textView3"
-        android:id="@+id/CvcEditText" />
-
-    <TextView
-        android:text="@string/cvc_what"
-        android:layout_marginStart="25dp"
-        android:textColor="@android:color/red"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"        
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/ExpiryYearEditText"
-        android:id="@+id/textView5" />
-
-
+        android:id="@+id/CvcEditText" />            
     </RelativeLayout>
 
     <LinearLayout
