@@ -236,13 +236,13 @@ namespace Auckland_Rangers
     [Activity(Label = "Orderdetail")]
     public class OrderdetailActivity : Activity
     {
-        EditText CheeseRoll, Pavlova, OnionDip, HokeyPokey, Fritter;
+        EditText CheeseRoll, Pavlova, OnionDip, HokeyPokey, Fritter, Salad;
         ImageButton backbtn;
         ImageView food1, food2, food3, food4, food5;
-        Button deletebtn1, deletebtn2, deletebtn3, deletebtn4, deletebtn5, btnPayment;
+        Button deletebtn1, deletebtn2, deletebtn3, deletebtn4, deletebtn5, deletebtn6, btnPayment;
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
-        TextView cost1, cost2, cost3, cost4, cost5, orderdate, subtotal,totalGST,totalCost;
-        int Quan1, Quan2, Quan3, Quan4, Quan5, result1, result2, result3, result4, result5;
+        TextView cost1, cost2, cost3, cost4, cost5, cost6, orderdate, subtotal,totalGST,totalCost;
+        int Quan1, Quan2, Quan3, Quan4, Quan5,Quan6, result1, result2, result3, result4, result5, result6;
         float TotalPrice;
 
         protected override void OnCreate(Bundle bundle)
@@ -264,6 +264,7 @@ namespace Auckland_Rangers
                 OnionDip = FindViewById<EditText>(Resource.Id.foodQuantity3);
                 HokeyPokey = FindViewById<EditText>(Resource.Id.foodQuantity4);
                 Fritter = FindViewById<EditText>(Resource.Id.foodQuantity5);
+                Salad = FindViewById<EditText>(Resource.Id.foodQuantity6);
                 food1 = FindViewById<ImageView>(Resource.Id.imageSouthlandCheeseRolls);
                 food2 = FindViewById<ImageView>(Resource.Id.imageKiwiPavlova);
                 food3 = FindViewById<ImageView>(Resource.Id.imageOnionDip);
@@ -275,11 +276,13 @@ namespace Auckland_Rangers
                 deletebtn3 = FindViewById<Button>(Resource.Id.deleteButton3);
                 deletebtn4 = FindViewById<Button>(Resource.Id.deleteButton4);
                 deletebtn5 = FindViewById<Button>(Resource.Id.deleteButton5);
+                deletebtn6 = FindViewById<Button>(Resource.Id.deleteButton6);
                 cost1 = FindViewById<TextView>(Resource.Id.foodCost1);
                 cost2 = FindViewById<TextView>(Resource.Id.foodCost2);
                 cost3 = FindViewById<TextView>(Resource.Id.foodCost3);
                 cost4 = FindViewById<TextView>(Resource.Id.foodCost4);
                 cost5 = FindViewById<TextView>(Resource.Id.foodCost5);
+                cost6 = FindViewById<TextView> (Resource.Id.foodCost6);
 
                 backbtn.Click += HomePressed;
                 food1.Click += Food1description;
@@ -297,6 +300,7 @@ namespace Auckland_Rangers
                 deletebtn3.Click += delete3Pressed;
                 deletebtn4.Click += delete4Pressed;
                 deletebtn5.Click += delete5Pressed;
+                deletebtn6.Click += delete6Pressed;
 
                 orderdate.Text = DateTime.Now.ToString();
 
@@ -318,7 +322,7 @@ namespace Auckland_Rangers
             }
             result1 = Quan1 * 16;
             cost1.Text = "$ " + result1.ToString() + ".00";
-            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
@@ -336,7 +340,7 @@ namespace Auckland_Rangers
             }
             result2 = Quan2 * 25;
             cost2.Text = "$ " + result2.ToString() + ".00";
-            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
@@ -351,7 +355,7 @@ namespace Auckland_Rangers
             }
             result3 = Quan3 * 11;
             cost3.Text = "$ " + result3.ToString() + ".00";
-            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
@@ -367,7 +371,7 @@ namespace Auckland_Rangers
             }
             result4 = Quan4 * 20;
             cost4.Text = "$ " + result4.ToString() + ".00";
-            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
@@ -383,7 +387,23 @@ namespace Auckland_Rangers
             }
             result5 = Quan5 * 23;
             cost5.Text = "$ " + result5.ToString() + ".00";
-            int Subtotal = result1 + result2 + result3 + result4 + result5;
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
+            subtotal.Text = "$ " + Subtotal + ".00";
+            float gst = (float)(Subtotal * 0.15);
+            totalGST.Text = "$ " + gst;
+            TotalPrice = Subtotal + gst;
+            totalCost.Text = "$ " + TotalPrice;
+        }
+        private void delete6Pressed(object sender, EventArgs e)
+        {
+            Quan6 = 0;
+            if (Int32.TryParse(Salad.Text, out Quan6))
+            {
+                Quan6 = Convert.ToInt32(Salad.Text);
+            }
+            result6 = Quan6 * 38;
+            cost6.Text = "$ " + result6.ToString() + ".00";
+            int Subtotal = result1 + result2 + result3 + result4 + result5 + result6;
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
@@ -849,6 +869,8 @@ namespace Auckland_Rangers
                 Deletebtn.Click += Deletepressed;
 
                 _dbManager = new DatabaseManager();
+                
+
                 _userId = Intent.GetIntExtra("UserId", 0);
                 SignUp objsignup = _dbManager.GetUserId(_userId);
                 if (objsignup != null)
@@ -897,8 +919,7 @@ namespace Auckland_Rangers
     public class PaymentOptionActivity : Activity
     {
         ImageButton back;
-        Button btncash;
-        Button btncredit;
+        Button btncash, btncredit, Submit;
         ImageButton btnHome;
         ImageButton btnSearch;
         ImageButton btnContact;
@@ -918,6 +939,7 @@ namespace Auckland_Rangers
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
                 Totalamount = FindViewById<TextView>(Resource.Id.textViewTotalAmount);
+                Submit = FindViewById<Button>(Resource.Id.buttonProceedToPayment);
                 float Totalprice = Intent.GetFloatExtra("totalcost", 0);
 
                 Totalamount.Text = "$ " + Totalprice.ToString();
@@ -927,9 +949,27 @@ namespace Auckland_Rangers
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
                 btnSearch.Click += SearchPressed;
+                btncash.Click += CashClicked;
+                btncredit.Click += CreditClicked;
+                Submit.Click += BacktoMenu;
 
             }
 
+        }
+        private void BacktoMenu(Object sender,  EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MenuActivity));
+            StartActivity(intent);
+            Toast.MakeText(this, "Rating Recorded", ToastLength.Long).Show();
+        }
+        private void CashClicked(Object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Thank you for purchase our food!", ToastLength.Long).Show();
+        }
+        private void CreditClicked(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(CreditActivity));
+            StartActivity(intent);
         }
         private void SearchPressed(Object sender, EventArgs e)
         {
@@ -956,6 +996,35 @@ namespace Auckland_Rangers
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
             StartActivity(intent);
+        }
+    }
+    [Activity(Label = "Search")]
+    public class CreditActivity : Activity
+    {
+        ImageButton back;
+        Button cancel, proceed;
+        protected override void OnCreate(Bundle? savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.CreditDebit);
+            back = FindViewById<ImageButton>(Resource.Id.buttonBack);
+            cancel = FindViewById<Button>(Resource.Id.buttonHome);
+            proceed = FindViewById<Button>(Resource.Id.buttonLogin);
+
+            back.Click += backClicked;
+            cancel.Click += backClicked;
+            proceed.Click += backClickedpurchase;
+        }
+        private void backClicked(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(PaymentOptionActivity));
+            StartActivity(intent);
+        }
+        private void backClickedpurchase(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(PaymentOptionActivity));
+            StartActivity(intent);
+            Toast.MakeText(this, "Thank you for purchase our food!", ToastLength.Long).Show();
         }
     }
     [Activity(Label = "Search")]
