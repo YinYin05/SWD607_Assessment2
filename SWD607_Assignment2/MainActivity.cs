@@ -5,6 +5,7 @@ using Person_DataAndriod;
 using SWD607_Assignment2.Models;
 using Newtonsoft.Json;
 using System.Text;
+using System.Runtime.InteropServices;
 namespace Auckland_Rangers
 
 
@@ -212,6 +213,7 @@ namespace Auckland_Rangers
                 backbtn = FindViewById<ImageButton>(Resource.Id.buttonBack);
                 btnDelete = FindViewById<Button>(Resource.Id.buttonDelete);
 
+
                 backbtn.Click += BackPressed;
                 btnAddEdit.Click += AddEditPressed;
             }
@@ -241,6 +243,7 @@ namespace Auckland_Rangers
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
         TextView cost1, cost2, cost3, cost4, cost5, orderdate, subtotal,totalGST,totalCost;
         int Quan1, Quan2, Quan3, Quan4, Quan5, result1, result2, result3, result4, result5;
+        float TotalPrice;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -288,6 +291,7 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
                 deletebtn1.Click += delete1Pressed;
                 deletebtn2.Click += delete2Pressed;
                 deletebtn3.Click += delete3Pressed;
@@ -298,6 +302,12 @@ namespace Auckland_Rangers
 
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void delete1Pressed(object sender, EventArgs e)
         {
@@ -312,7 +322,7 @@ namespace Auckland_Rangers
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
-            float TotalPrice = Subtotal + gst;
+            TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
 
 
@@ -330,7 +340,7 @@ namespace Auckland_Rangers
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
-            float TotalPrice = Subtotal + gst;
+            TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
         }
         private void delete3Pressed(object sender, EventArgs e)
@@ -345,7 +355,7 @@ namespace Auckland_Rangers
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
-            float TotalPrice = Subtotal + gst;
+            TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
         }
         private void delete4Pressed(object sender, EventArgs e)
@@ -361,7 +371,7 @@ namespace Auckland_Rangers
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
-            float TotalPrice = Subtotal + gst;
+            TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
         }
         private void delete5Pressed(object sender, EventArgs e)
@@ -377,7 +387,7 @@ namespace Auckland_Rangers
             subtotal.Text = "$ " + Subtotal + ".00";
             float gst = (float)(Subtotal * 0.15);
             totalGST.Text = "$ " + gst;
-            float TotalPrice = Subtotal + gst;
+            TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
         }
 
@@ -409,6 +419,7 @@ namespace Auckland_Rangers
         private void PaymentPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(PaymentOptionActivity));
+            intent.PutExtra("totalcost", TotalPrice);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
@@ -456,8 +467,15 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
@@ -509,6 +527,7 @@ namespace Auckland_Rangers
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
                 Nextbtn.Click += NextPressed;
+                btnSearch.Click += SearchPressed;
                 Closebtn.Click += BackToOrderdetail;
                 Orderbtn.Click += BackToOrderdetail;
                 btnHome.Click += HomePressed;
@@ -516,6 +535,12 @@ namespace Auckland_Rangers
                 btnProfile.Click += ProfilePressed;
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
@@ -572,8 +597,15 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
@@ -630,8 +662,15 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
@@ -640,7 +679,7 @@ namespace Auckland_Rangers
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
+            Intent intent = new Intent(this, typeof(OrderdetailActivity));
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
@@ -688,8 +727,15 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
@@ -698,7 +744,7 @@ namespace Auckland_Rangers
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
+            Intent intent = new Intent(this, typeof(OrderdetailActivity));
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
@@ -742,9 +788,16 @@ namespace Auckland_Rangers
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
 
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void SendPressed(Object sender, EventArgs e)
         {
@@ -850,6 +903,7 @@ namespace Auckland_Rangers
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
+        TextView Totalamount;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -863,14 +917,25 @@ namespace Auckland_Rangers
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
+                Totalamount = FindViewById<TextView>(Resource.Id.textViewTotalAmount);
+                float Totalprice = Intent.GetFloatExtra("totalcost", 0);
+
+                Totalamount.Text = "$ " + Totalprice.ToString();
 
                 back.Click += BacktoOrder;
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
                 btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
 
             }
 
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            StartActivity(intent);
         }
         private void BacktoOrder(Object sender, EventArgs e)
         {
@@ -899,6 +964,7 @@ namespace Auckland_Rangers
         private EditText search_Item_editText, search_ItemDiet_editText, SelectItem_Protien_EditText;
         private Button search_Button;
         private TextView Searched_Items_TextView;
+        ImageButton back;
 
         private const string ApiKey = "cd51d9b5304642539829fd4461adf141";
         private const string ApiUrl = "https://api.spoonacular.com/recipes/complexSearch";
@@ -915,6 +981,9 @@ namespace Auckland_Rangers
             SelectItem_Protien_EditText = FindViewById<EditText>(Resource.Id.SelectItem_Protein_EditText);
             search_Button = FindViewById<Button>(Resource.Id.btn_Search);
             Searched_Items_TextView = FindViewById<TextView>(Resource.Id.SearchedItems_TextView);
+            back = (ImageButton)FindViewById<ImageView>(Resource.Id.buttonBack);
+
+            back.Click += backtoMenu;
 
             search_Button.Click += async (sender, e) =>
             {
@@ -934,7 +1003,11 @@ namespace Auckland_Rangers
 
             };
         }
-
+        private void backtoMenu(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MenuActivity));
+            StartActivity(intent);
+        }
         private async Task<string> SearchRecipes(string apiUrl)
         {
             using (HttpClient client = new HttpClient())

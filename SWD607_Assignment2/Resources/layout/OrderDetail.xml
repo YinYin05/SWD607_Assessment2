@@ -656,7 +656,7 @@
 
                     <!-- Quantity -->
                     <EditText
-                        android:id="@+id/foodQuantity5"
+                        android:id="@+id/foodQuantity6"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
                         android:textSize="20sp"
@@ -670,7 +670,7 @@
 
                     <!-- Add Button -->
                     <Button
-                        android:id="@+id/deleteButton5"
+                        android:id="@+id/deleteButton6"
                         android:layout_width="50dp"
                         android:layout_height="35dp"
                         android:text="@string/small_delete"
@@ -687,7 +687,7 @@
 
                     <!-- Cost -->
                     <TextView
-                        android:id="@+id/foodCost5"
+                        android:id="@+id/foodCost6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/price_total_amount"
