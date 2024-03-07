@@ -6,6 +6,7 @@ using SWD607_Assignment2.Models;
 using Newtonsoft.Json;
 using System.Text;
 using System.Runtime.InteropServices;
+using static Android.Provider.ContactsContract.CommonDataKinds;
 namespace Auckland_Rangers
 
 
@@ -17,6 +18,7 @@ namespace Auckland_Rangers
         EditText edtusername, edtpassword;       
         Button ButtonLogin;
         Button ButtonHome;
+        string usernames;
         DatabaseManager Obj_databaseManager;    
         protected override void OnCreate(Bundle bundle)
         {
@@ -37,20 +39,21 @@ namespace Auckland_Rangers
         private void LoginPressed(object sender, EventArgs e)
         {
             
-            string username = edtusername.Text;
+            usernames = edtusername.Text;
             string password = edtpassword.Text;
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(usernames) || string.IsNullOrEmpty(password))
             {
                 Toast.MakeText(this, "Please enter both username and password", ToastLength.Short).Show();
                 return;
             }
             else
             {
-                SignUp signup = Obj_databaseManager.GetUserName(username);
+                SignUp signup = Obj_databaseManager.GetUserName(usernames);
 
                 if (signup != null && signup.Password == password)
                 {
-                    Intent Login_intent = new Intent(this, typeof(MenuActivity));            
+                    Intent Login_intent = new Intent(this, typeof(MenuActivity));
+                    Login_intent.PutExtra("username", usernames);
                     StartActivity(Login_intent);
                 }
                 else
@@ -63,6 +66,7 @@ namespace Auckland_Rangers
         private void SignUpPressed(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(SignUpActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
             //'Unable to find explicit activity class {com.companyname.SWD607_Assignment2/crc64b8371ed0b9bbb922.SignUpActivity};
             //have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?'
@@ -73,7 +77,7 @@ namespace Auckland_Rangers
     //SignUp progress
     public class SignUpActivity : Activity
     {
-        
+        string usernames;
         DatabaseManager _dbManager;
         EditText username, password, firstname, lastname, phonenumber, email; 
         Button buttonSubmit;
@@ -110,6 +114,7 @@ namespace Auckland_Rangers
             _dbManager.InsertUser(UpdateUserData);
             Toast.MakeText(this, "Person Data is inserted successfully", ToastLength.Long).Show();          
             Intent intent = new Intent(this,typeof(SignInActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }        
     }
@@ -119,12 +124,13 @@ namespace Auckland_Rangers
     [Activity(Label = "Menu")]
     public class MenuActivity : Activity
     {
+        string usernames;
         ImageButton Ibtnmaincart;
         TextView txtMoreoptions;
         TextView txtViewall;
         Button buttonReservation1;
         Button buttonMenulist;
-        ImageButton btnHome;
+        ImageButton btnHome, admin;
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
@@ -147,7 +153,9 @@ namespace Auckland_Rangers
             btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
             btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
             btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
+            admin = FindViewById<ImageButton>(Resource.Id.adminbtn);
 
+            usernames = Intent.GetStringExtra("username");
             Ibtnmaincart.Click += MainCartPressed;
             Ibtncart1.Click += MainCartPressed;
             Ibtncart2.Click += MainCartPressed;
@@ -159,39 +167,52 @@ namespace Auckland_Rangers
             btnContact.Click += ContactUsPressed;
             btnProfile.Click += ProfilePressed;
             btnSearch.Click += SearchPressed;
+            admin.Click += AlluserPressed;
 
             
 
+        }
+        private void AlluserPressed(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(AllUserDetails));
+                Intent.PutExtra("username", usernames);
+            StartActivity(intent);
         }
         private void SearchPressed(Object sender, EventArgs e)
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void MainCartPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ReservationPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ReservationActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -201,6 +222,7 @@ namespace Auckland_Rangers
     [Activity(Label = "reservation")]
     public class ReservationActivity : Activity
     {
+        string usernames;
         ImageButton backbtn;
         Button btnAddEdit;
         Button btnDelete;
@@ -212,7 +234,7 @@ namespace Auckland_Rangers
                 btnAddEdit = FindViewById<Button>(Resource.Id.buttonAddEdit);
                 backbtn = FindViewById<ImageButton>(Resource.Id.buttonBack);
                 btnDelete = FindViewById<Button>(Resource.Id.buttonDelete);
-
+                usernames = Intent.GetStringExtra("username");
 
                 backbtn.Click += BackPressed;
                 btnAddEdit.Click += AddEditPressed;
@@ -222,11 +244,13 @@ namespace Auckland_Rangers
         private void BackPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void AddEditPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(AddEditActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -244,6 +268,7 @@ namespace Auckland_Rangers
         TextView cost1, cost2, cost3, cost4, cost5, cost6, orderdate, subtotal,totalGST,totalCost;
         int Quan1, Quan2, Quan3, Quan4, Quan5,Quan6, result1, result2, result3, result4, result5, result6;
         float TotalPrice;
+        string usernames;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -264,6 +289,7 @@ namespace Auckland_Rangers
                 OnionDip = FindViewById<EditText>(Resource.Id.foodQuantity3);
                 HokeyPokey = FindViewById<EditText>(Resource.Id.foodQuantity4);
                 Fritter = FindViewById<EditText>(Resource.Id.foodQuantity5);
+                usernames = Intent.GetStringExtra("username");
                 Salad = FindViewById<EditText>(Resource.Id.foodQuantity6);
                 food1 = FindViewById<ImageView>(Resource.Id.imageSouthlandCheeseRolls);
                 food2 = FindViewById<ImageView>(Resource.Id.imageKiwiPavlova);
@@ -311,6 +337,7 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void delete1Pressed(object sender, EventArgs e)
@@ -414,47 +441,56 @@ namespace Auckland_Rangers
         private void Food1description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food2description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription2Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food3description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription3Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food4description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription4Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food5description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription5Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void PaymentPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(PaymentOptionActivity));
+            Intent.PutExtra("username", usernames);
             intent.PutExtra("totalcost", TotalPrice);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -468,6 +504,7 @@ namespace Auckland_Rangers
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
+        string usernames;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -476,6 +513,7 @@ namespace Auckland_Rangers
                 Nextbtn = FindViewById<ImageButton>(Resource.Id.buttonNext);
                 Closebtn = FindViewById<ImageButton>(Resource.Id.buttonClose);
                 Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
+                usernames = Intent.GetStringExtra("username");
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
@@ -495,37 +533,44 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription2Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
     [Activity(Label = "Food2")]
     public class FoodDescription2Activity : Activity
     {
+        string usernames;
         ImageButton Nextbtn;
         ImageButton Closebtn;
         Button Orderbtn;
@@ -543,6 +588,7 @@ namespace Auckland_Rangers
                 Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
+                usernames = Intent.GetStringExtra("username");
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
@@ -560,37 +606,44 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription3Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
     [Activity(Label = "Food3")]
     public class FoodDescription3Activity : Activity
     {
+        string usernames;
         ImageButton Nextbtn;
         ImageButton Closebtn;
         Button Orderbtn;
@@ -605,6 +658,7 @@ namespace Auckland_Rangers
                 SetContentView(Resource.Layout.FoodDescription3);
                 Nextbtn = FindViewById<ImageButton>(Resource.Id.buttonNext);
                 Closebtn = FindViewById<ImageButton>(Resource.Id.buttonClose);
+                usernames = Intent.GetStringExtra("username");
                 Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
@@ -625,31 +679,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription4Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -663,6 +723,7 @@ namespace Auckland_Rangers
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
+        string usernames;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -673,6 +734,7 @@ namespace Auckland_Rangers
                 Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
+                usernames = Intent.GetStringExtra("username");
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
@@ -690,31 +752,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription5Activity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -728,6 +796,7 @@ namespace Auckland_Rangers
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
+        string usernames;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -737,6 +806,7 @@ namespace Auckland_Rangers
                 Closebtn = FindViewById<ImageButton>(Resource.Id.buttonClose);
                 Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
+                usernames = Intent.GetStringExtra("username");
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
@@ -755,31 +825,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -793,6 +869,7 @@ namespace Auckland_Rangers
         ImageButton btnSearch;
         ImageButton btnContact;
         ImageButton btnProfile;
+        string usernames;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -801,6 +878,7 @@ namespace Auckland_Rangers
                 btnSend = FindViewById<Button>(Resource.Id.buttonSend);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
                 btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
+                usernames = Intent.GetStringExtra("username");
                 btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
@@ -817,6 +895,7 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void SendPressed(Object sender, EventArgs e)
@@ -826,16 +905,19 @@ namespace Auckland_Rangers
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            Intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -847,9 +929,11 @@ namespace Auckland_Rangers
     {
         Button Updatebtn;
         Button Deletebtn;
+        string usernames;
         int _userId;
         DatabaseManager _dbManager;
-        EditText username, password, firstname, lastname, phonenumber, email;
+        SignUp obj_SignUp;
+        TextView username, password, firstname, lastname, phonenumber, email;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -857,56 +941,46 @@ namespace Auckland_Rangers
             {
                 SetContentView(Resource.Layout.Profile);
                 Updatebtn = FindViewById<Button>(Resource.Id.btnUpdate);
-                Deletebtn = FindViewById<Button>(Resource.Id.btnDeleteAccount);
-                username = FindViewById<EditText>(Resource.Id.editTextUsername);
-                password = FindViewById<EditText>(Resource.Id.editTextPassword);
-                firstname = FindViewById<EditText>(Resource.Id.editTextFirstName);
-                lastname = FindViewById<EditText>(Resource.Id.editTextLastName);
-                phonenumber = FindViewById<EditText>(Resource.Id.editTextMobileNumber);
-                email = FindViewById<EditText>(Resource.Id.editTextEmailAddress);
 
-                Updatebtn.Click += Updatepressed;
-                Deletebtn.Click += Deletepressed;
+                Deletebtn = FindViewById<Button>(Resource.Id.btnDeleteAccount);
+                username = FindViewById<TextView>(Resource.Id.txtUsername);
+                password = FindViewById<TextView>(Resource.Id.txtPassword);
+                firstname = FindViewById<TextView>(Resource.Id.editTextFirstName);
+                lastname = FindViewById<TextView>(Resource.Id.editTextLastName);
+                phonenumber = FindViewById<TextView>(Resource.Id.txtPhone);
+                email = FindViewById<TextView>(Resource.Id.txtEmail);
 
                 _dbManager = new DatabaseManager();
-                
 
-                _userId = Intent.GetIntExtra("UserId", 0);
-                SignUp objsignup = _dbManager.GetUserId(_userId);
-                if (objsignup != null)
+                
+                usernames = Intent.GetStringExtra("username");
+                obj_SignUp = _dbManager.GetUserName(usernames);
+
+                if (obj_SignUp != null)
                 {
-                    username.Text = objsignup.UserName;
-                    password.Text = objsignup.Password;
-                    firstname.Text = objsignup.FirstName;
-                    lastname.Text = objsignup.LastName;
-                    phonenumber.Text = objsignup.PhoneNumber;
-                    email.Text = objsignup.Email;
+                    username.Text = obj_SignUp.UserName;
+                    password.Text = obj_SignUp.Password;
+                    lastname.Text = obj_SignUp.LastName;
+                    firstname.Text = obj_SignUp.FirstName;
+                    phonenumber.Text = obj_SignUp.PhoneNumber;
+                    email.Text = obj_SignUp.Email;
                 }
+                else
+                {
+                    Toast.MakeText(this, "Person Data Not Found", ToastLength.Long).Show();
+                }
+                Updatebtn.Click += Updatepressed;
+                Deletebtn.Click += Deletepressed;
             }
 
         }
         private void Updatepressed(Object sender, EventArgs e)
         {
-            SignUp UpdateUserData = new SignUp()
-            {
-                Id = _userId,
-                UserName = username.Text,
-                Password = password.Text,
-                FirstName = firstname.Text,
-                LastName = lastname.Text,
-                PhoneNumber = phonenumber.Text,
-                Email = email.Text
-            };
-
-            _dbManager.UpdateUser(UpdateUserData);
-            Toast.MakeText(this, "Person Data is updated successfully", ToastLength.Long).Show();
-
-            Finish();
+            
         }
         private void Deletepressed(Object sender, EventArgs e)
         {
-            DatabaseManager dbm = new DatabaseManager();
-            dbm.DeleteUser(_userId);
+            
             Toast.MakeText(this, "Person Data is deleted successfully", ToastLength.Long).Show();
             Intent intent = new Intent(this, typeof(SignInActivity));
             StartActivity(intent);
@@ -918,6 +992,7 @@ namespace Auckland_Rangers
     [Activity(Label = "Payment")]
     public class PaymentOptionActivity : Activity
     {
+        string usernames;
         ImageButton back;
         Button btncash, btncredit, Submit;
         ImageButton btnHome;
@@ -932,6 +1007,7 @@ namespace Auckland_Rangers
             {
                 SetContentView(Resource.Layout.PaymentOption);
                 back = FindViewById<ImageButton>(Resource.Id.buttonBack);
+                usernames = Intent.GetStringExtra("username");
                 btncash = FindViewById<Button>(Resource.Id.buttonCash);
                 btncredit = FindViewById<Button>(Resource.Id.buttonCard);
                 btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
@@ -1002,6 +1078,7 @@ namespace Auckland_Rangers
     public class CreditActivity : Activity
     {
         ImageButton back;
+        string usernames;
         Button cancel, proceed;
         protected override void OnCreate(Bundle? savedInstanceState)
         {
@@ -1013,6 +1090,7 @@ namespace Auckland_Rangers
 
             back.Click += backClicked;
             cancel.Click += backClicked;
+            usernames = Intent.GetStringExtra("username");
             proceed.Click += backClickedpurchase;
         }
         private void backClicked(Object sender, EventArgs e)
@@ -1037,7 +1115,7 @@ namespace Auckland_Rangers
 
         private const string ApiKey = "cd51d9b5304642539829fd4461adf141";
         private const string ApiUrl = "https://api.spoonacular.com/recipes/complexSearch";
-
+        string usernames;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -1047,6 +1125,7 @@ namespace Auckland_Rangers
 
             search_Item_editText = FindViewById<EditText>(Resource.Id.SelectItem_EditText);
             search_ItemDiet_editText = FindViewById<EditText>(Resource.Id.SelectItem_Diet_EditText);
+            usernames = Intent.GetStringExtra("username");
             SelectItem_Protien_EditText = FindViewById<EditText>(Resource.Id.SelectItem_Protein_EditText);
             search_Button = FindViewById<Button>(Resource.Id.btn_Search);
             Searched_Items_TextView = FindViewById<TextView>(Resource.Id.SearchedItems_TextView);
@@ -1161,6 +1240,7 @@ namespace Auckland_Rangers
     [Activity(Label = "AddEdit")]
     public class AddEditActivity : Activity
     {
+        string usernames;
         Button addbutton;
         Button editbutton;
         Spinner Tablespin;
@@ -1170,6 +1250,7 @@ namespace Auckland_Rangers
             {
                 SetContentView(Resource.Layout.AddEdit);
                 addbutton = FindViewById<Button>(Resource.Id.buttonAdd);
+                usernames = Intent.GetStringExtra("username");
                 editbutton = FindViewById<Button>(Resource.Id.buttonEdit);
                 Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
 
@@ -1204,6 +1285,7 @@ namespace Auckland_Rangers
     [Activity(Label = "AllUserDetails", MainLauncher = false)]
     public class AllUserDetails : Activity
     {
+        string usernames;
         ListView obj_listview;
         DatabaseManager obj_databaseManager;
         EditText obj_editText;
@@ -1215,6 +1297,7 @@ namespace Auckland_Rangers
 
             // Create your application here
             SetContentView(Resource.Layout.All_users);
+            usernames = Intent.GetStringExtra("username");
             obj_listview = FindViewById<ListView>(Resource.Id.AllUser_ListView);
             obj_editText = FindViewById<EditText>(Resource.Id.editText1);
 
