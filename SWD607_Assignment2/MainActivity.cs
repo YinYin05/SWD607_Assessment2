@@ -8,18 +8,16 @@ using System.Text;
 using System.Runtime.InteropServices;
 using static Android.Provider.ContactsContract.CommonDataKinds;
 namespace Auckland_Rangers
-
-
 {
-    [Activity( MainLauncher = true)]
+    [Activity(MainLauncher = true)]
     //Sign in progress
     public class SignInActivity : Activity
     {
-        EditText edtusername, edtpassword;       
+        EditText edtusername, edtpassword;
         Button ButtonLogin;
         Button ButtonHome;
         string usernames;
-        DatabaseManager Obj_databaseManager;    
+        DatabaseManager Obj_databaseManager;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -38,7 +36,7 @@ namespace Auckland_Rangers
         }
         private void LoginPressed(object sender, EventArgs e)
         {
-            
+
             usernames = edtusername.Text;
             string password = edtpassword.Text;
             if (string.IsNullOrEmpty(usernames) || string.IsNullOrEmpty(password))
@@ -61,7 +59,7 @@ namespace Auckland_Rangers
                     Toast.MakeText(this, "Please enter correct one", ToastLength.Short).Show();
                     return;
                 }
-            }            
+            }
         }
         private void SignUpPressed(object sender, EventArgs e)
         {
@@ -73,13 +71,13 @@ namespace Auckland_Rangers
         }
     }
 
-    [Activity(Label ="SignUp")]
+    [Activity(Label = "SignUp")]
     //SignUp progress
     public class SignUpActivity : Activity
     {
         string usernames;
         DatabaseManager _dbManager;
-        EditText username, password, firstname, lastname, phonenumber, email; 
+        EditText username, password, firstname, lastname, phonenumber, email;
         Button buttonSubmit;
         protected override void OnCreate(Bundle bundle)
         {
@@ -112,11 +110,11 @@ namespace Auckland_Rangers
             };
 
             _dbManager.InsertUser(UpdateUserData);
-            Toast.MakeText(this, "Person Data is inserted successfully", ToastLength.Long).Show();          
-            Intent intent = new Intent(this,typeof(SignInActivity));
+            Toast.MakeText(this, "Person Data is inserted successfully", ToastLength.Long).Show();
+            Intent intent = new Intent(this, typeof(SignInActivity));
             Intent.PutExtra("username", usernames);
             StartActivity(intent);
-        }        
+        }
     }
 
 
@@ -130,12 +128,7 @@ namespace Auckland_Rangers
         TextView txtViewall;
         Button buttonReservation1;
         Button buttonMenulist;
-        ImageButton btnHome, admin;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
-        ImageButton Ibtncart1;
-        ImageButton Ibtncart2;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile, Ibtncart1, Ibtncart2;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -153,8 +146,7 @@ namespace Auckland_Rangers
             btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
             btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
             btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
-            admin = FindViewById<ImageButton>(Resource.Id.adminbtn);
-
+            
             usernames = Intent.GetStringExtra("username");
             Ibtnmaincart.Click += MainCartPressed;
             Ibtncart1.Click += MainCartPressed;
@@ -167,17 +159,8 @@ namespace Auckland_Rangers
             btnContact.Click += ContactUsPressed;
             btnProfile.Click += ProfilePressed;
             btnSearch.Click += SearchPressed;
-            admin.Click += AlluserPressed;
-
-            
-
         }
-        private void AlluserPressed(Object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(AllUserDetails));
-                Intent.PutExtra("username", usernames);
-            StartActivity(intent);
-        }
+  
         private void SearchPressed(Object sender, EventArgs e)
         {
             SearchActivity search = new SearchActivity();
@@ -265,8 +248,8 @@ namespace Auckland_Rangers
         ImageView food1, food2, food3, food4, food5;
         Button deletebtn1, deletebtn2, deletebtn3, deletebtn4, deletebtn5, deletebtn6, btnPayment;
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
-        TextView cost1, cost2, cost3, cost4, cost5, cost6, orderdate, subtotal,totalGST,totalCost;
-        int Quan1, Quan2, Quan3, Quan4, Quan5,Quan6, result1, result2, result3, result4, result5, result6;
+        TextView cost1, cost2, cost3, cost4, cost5, cost6, orderdate, subtotal, totalGST, totalCost;
+        int Quan1, Quan2, Quan3, Quan4, Quan5, Quan6, result1, result2, result3, result4, result5, result6;
         float TotalPrice;
         string usernames;
 
@@ -308,7 +291,7 @@ namespace Auckland_Rangers
                 cost3 = FindViewById<TextView>(Resource.Id.foodCost3);
                 cost4 = FindViewById<TextView>(Resource.Id.foodCost4);
                 cost5 = FindViewById<TextView>(Resource.Id.foodCost5);
-                cost6 = FindViewById<TextView> (Resource.Id.foodCost6);
+                cost6 = FindViewById<TextView>(Resource.Id.foodCost6);
 
                 backbtn.Click += HomePressed;
                 food1.Click += Food1description;
@@ -327,9 +310,7 @@ namespace Auckland_Rangers
                 deletebtn4.Click += delete4Pressed;
                 deletebtn5.Click += delete5Pressed;
                 deletebtn6.Click += delete6Pressed;
-
                 orderdate.Text = DateTime.Now.ToString();
-
             }
 
         }
@@ -355,8 +336,6 @@ namespace Auckland_Rangers
             totalGST.Text = "$ " + gst;
             TotalPrice = Subtotal + gst;
             totalCost.Text = "$ " + TotalPrice;
-
-
         }
         private void delete2Pressed(object sender, EventArgs e)
         {
@@ -497,13 +476,9 @@ namespace Auckland_Rangers
     [Activity(Label = "Food1")]
     public class FoodDescriptionActivity : Activity
     {
-        ImageButton Nextbtn;
-        ImageButton Closebtn;
+        ImageButton Nextbtn, Closebtn;
         Button Orderbtn;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         string usernames;
         protected override void OnCreate(Bundle bundle)
         {
@@ -574,10 +549,7 @@ namespace Auckland_Rangers
         ImageButton Nextbtn;
         ImageButton Closebtn;
         Button Orderbtn;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -644,13 +616,9 @@ namespace Auckland_Rangers
     public class FoodDescription3Activity : Activity
     {
         string usernames;
-        ImageButton Nextbtn;
-        ImageButton Closebtn;
+        ImageButton Nextbtn, Closebtn;
         Button Orderbtn;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -719,10 +687,7 @@ namespace Auckland_Rangers
         ImageButton Nextbtn;
         ImageButton Closebtn;
         Button Orderbtn;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         string usernames;
         protected override void OnCreate(Bundle bundle)
         {
@@ -792,10 +757,7 @@ namespace Auckland_Rangers
         ImageButton Nextbtn;
         ImageButton Closebtn;
         Button Orderbtn;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         string usernames;
         protected override void OnCreate(Bundle bundle)
         {
@@ -865,10 +827,7 @@ namespace Auckland_Rangers
     public class ContactActivity : Activity
     {
         Button btnSend;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         string usernames;
         protected override void OnCreate(Bundle bundle)
         {
@@ -927,8 +886,8 @@ namespace Auckland_Rangers
     [Activity(Label = "Profile")]
     public class ProfileActivity : Activity
     {
-        Button Updatebtn;
-        Button Deletebtn;
+        Button Updatebtn, Deletebtn;
+        ImageButton back;
         string usernames;
         int _userId;
         DatabaseManager _dbManager;
@@ -949,10 +908,11 @@ namespace Auckland_Rangers
                 lastname = FindViewById<TextView>(Resource.Id.editTextLastName);
                 phonenumber = FindViewById<TextView>(Resource.Id.txtPhone);
                 email = FindViewById<TextView>(Resource.Id.txtEmail);
+                back = FindViewById<ImageButton>(Resource.Id.buttonBack);
 
                 _dbManager = new DatabaseManager();
 
-                
+
                 usernames = Intent.GetStringExtra("username");
                 obj_SignUp = _dbManager.GetUserName(usernames);
 
@@ -970,73 +930,99 @@ namespace Auckland_Rangers
                     Toast.MakeText(this, "Person Data Not Found", ToastLength.Long).Show();
                 }
                 Updatebtn.Click += Updatepressed;
-                Deletebtn.Click += Deletepressed;
+                Deletebtn.Click += DeleteUser;
+                back.Click += BackMenu;
             }
 
         }
+        private void BackMenu(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MenuActivity));
+            StartActivity(intent);
+        }
         private void Updatepressed(Object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(Activity));
+            Intent intent = new Intent(this, typeof(Updatepage));
             intent.PutExtra("UserId", obj_SignUp.Id);
             intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
-        private void Deletepressed(Object sender, EventArgs e)
+        private void DeleteUser(object sender, EventArgs e)
         {
-            
+            _dbManager.DeleteUser(_userId);
             Toast.MakeText(this, "Person Data is deleted successfully", ToastLength.Long).Show();
             Intent intent = new Intent(this, typeof(SignInActivity));
             StartActivity(intent);
         }
+        
     }
-    /*[Activity(Label = "Update Users")]
-      public class Updatepage:Activity
+    [Activity(Label = "Update Users")]
+    public class Updatepage : Activity
     {
-        string usernames
-        private int userId
-        pritected override void OnCreate(Bundle bundle)
+        string usernames;
+        private int userId;
+        DatabaseManager dm;
+        Button updatebtn;
+        ImageButton back;
+        EditText username, password, firstname, lastname, phonenumber, email;
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle)
-            SetContentView(Resoure.Layout.UpdatePage)
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Profile_Update);
+            back = FindViewById<ImageButton>(Resource.Id.buttonBack);
+            username = FindViewById<EditText>(Resource.Id.txtUsername);
+            password = FindViewById<EditText>(Resource.Id.txtPassword);
+            firstname = FindViewById<EditText>(Resource.Id.editTextFirstName);
+            lastname = FindViewById<EditText>(Resource.Id.editTextLastName);
+            phonenumber = FindViewById<EditText>(Resource.Id.txtPhone);
+            email = FindViewById<EditText>(Resource.Id.txtEmail);
+            updatebtn = FindViewById<Button>(Resource.Id.buttonSend);
 
-            usernames = Intent.GetStringExtra("username")
-            userId = Intent.GetIntExtra("UserId",0);
-            SignUp signUp = dataManager.GetUserId(UserId);
+            dm = new DatabaseManager();
+            usernames = Intent.GetStringExtra("username");
+            userId = Intent.GetIntExtra("UserId", 0);
+            SignUp signUp = dm.GetUserId(userId);
             if (signUp != null)
             {
-                EditTextUser.Text = signUp.UserName;
-                EditTextPassword.Text = signUp.Password;
-                EditTextMobile.Text = signUp.Mobile;
-                EditTextEmail.Text = signUp.Email;
+                username.Text = signUp.UserName;
+                password.Text = signUp.Password;
+                firstname.Text = signUp.FirstName;
+                lastname.Text = signUp.LastName;
+                phonenumber.Text = signUp.PhoneNumber;
+                email.Text = signUp.Email;
             }
             else
-            {
+            {   
                 Toast.MakeText(this, "Persons Data Not Found", ToastLength.Long).Show();
             }
+            back.Click += backtoProfile;
+            updatebtn.Click += ButtonUpdateClick;
+        }
+        private void backtoProfile(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ProfileActivity));
+            StartActivity(intent);
         }
         void ButtonUpdateClick(object sender, EventArgs e)
         {
             SignUp update = new SignUp()
             {
-                Id = UserId,
-                UserName = EditTextUser.Text,
-                Password = EditTextPassword.Text,
-                Email = EditTextEmail.Text,
-                Mobile = EditTextMobile.Text
+                Id = userId,
+                UserName = username.Text,
+                Password = password.Text,
+                FirstName = firstname.Text,
+                LastName = lastname.Text,
+                PhoneNumber = phonenumber.Text,
+                Email = email.Text
             };
-            dataManager.UpdateUser(update);
- 
+            dm.UpdateUser(update);
             Toast.MakeText(this, "Changes have been made", ToastLength.Long).Show();
-            username = EditTextUser.Text;
+            usernames = username.Text;
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            intent.PutExtra("username", username);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
-
-     */
-
-
     //Payment
     [Activity(Label = "Payment")]
     public class PaymentOptionActivity : Activity
@@ -1044,10 +1030,7 @@ namespace Auckland_Rangers
         string usernames;
         ImageButton back;
         Button btncash, btncredit, Submit;
-        ImageButton btnHome;
-        ImageButton btnSearch;
-        ImageButton btnContact;
-        ImageButton btnProfile;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
         TextView Totalamount;
 
         protected override void OnCreate(Bundle bundle)
@@ -1079,9 +1062,8 @@ namespace Auckland_Rangers
                 Submit.Click += BacktoMenu;
 
             }
-
         }
-        private void BacktoMenu(Object sender,  EventArgs e)
+        private void BacktoMenu(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
             StartActivity(intent);
@@ -1155,7 +1137,7 @@ namespace Auckland_Rangers
         }
     }
     [Activity(Label = "Search")]
-        public class SearchActivity : Activity
+    public class SearchActivity : Activity
     {
         private EditText search_Item_editText, search_ItemDiet_editText, SelectItem_Protien_EditText;
         private Button search_Button;
@@ -1181,7 +1163,6 @@ namespace Auckland_Rangers
             back = (ImageButton)FindViewById<ImageView>(Resource.Id.buttonBack);
 
             back.Click += backtoMenu;
-
             search_Button.Click += async (sender, e) =>
             {
                 string searchdata = search_Item_editText.Text;
@@ -1190,7 +1171,6 @@ namespace Auckland_Rangers
                 if (!string.IsNullOrEmpty(searchdata))
                 {
                     string apiUrl = $"{ApiUrl}?apiKey={ApiKey}&query={searchdata}&diet={search_Diet_date}&minProtein={search_protine}";
-
                     Searched_Items_TextView.Text = await SearchRecipes(apiUrl);
                 }
                 else
@@ -1252,13 +1232,11 @@ namespace Auckland_Rangers
         [JsonProperty("unit")]
         public string unit { get; set; }
     }
-
     public class Nutrition
     {
         [JsonProperty("nutrients")]
         public List<Nutrient> nutrients { get; set; }
     }
-
     public class Result
     {
         [JsonProperty("id")]
@@ -1272,7 +1250,6 @@ namespace Auckland_Rangers
         [JsonProperty("nutrition")]
         public Nutrition nutrition { get; set; }
     }
-
     public class Root
     {
         [JsonProperty("results")]
@@ -1284,8 +1261,6 @@ namespace Auckland_Rangers
         [JsonProperty("totalResults")]
         public int totalResults { get; set; }
     }
-
-
     [Activity(Label = "AddEdit")]
     public class AddEditActivity : Activity
     {
@@ -1308,7 +1283,6 @@ namespace Auckland_Rangers
                 adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
                 Tablespin.Adapter = adapter;
             }
-
         }
         public void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
@@ -1331,87 +1305,4 @@ namespace Auckland_Rangers
             }
         }
     }
-    [Activity(Label = "AllUserDetails", MainLauncher = false)]
-    public class AllUserDetails : Activity
-    {
-        string usernames;
-        ListView obj_listview;
-        DatabaseManager obj_databaseManager;
-        EditText obj_editText;
-        List<SignUp> userdetails;
-
-        protected override void OnCreate(Bundle? savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-
-            // Create your application here
-            SetContentView(Resource.Layout.All_users);
-            usernames = Intent.GetStringExtra("username");
-            obj_listview = FindViewById<ListView>(Resource.Id.AllUser_ListView);
-            obj_editText = FindViewById<EditText>(Resource.Id.editText1);
-
-            obj_databaseManager = new DatabaseManager();
-            Display();
-
-            obj_listview.ItemClick += obj_listview_item_Selected;
-
-        }
-        protected override void OnResume()
-        {
-            base.OnResume();
-
-            Display();
-        }
-
-        private void Display()
-        {
-            userdetails = obj_databaseManager.GetUsers();
-
-            ArrayAdapter<string> UserDetails_adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1);
-
-            foreach (var item in userdetails)
-            {
-                //if(item.FullName == obj_editText.Text)
-                {
-                    UserDetails_adapter.Add($"{item.UserName} - {item.LastName} - {item.Email}");
-                }
-
-            }
-            obj_listview.Adapter = UserDetails_adapter;
-        }
-
-        private void obj_listview_item_Selected(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            SignUp selectedUser = userdetails[e.Position];
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.SetTitle("Options");
-            builder.SetMessage("Please select one option");
-            builder.SetPositiveButton("Update", (s, a) => UpdateUser(selectedUser));
-            builder.SetNegativeButton("Delete", (s, a) => DeleteUser(selectedUser));
-            // Set the Cancel button with dismiss action
-            builder.SetNeutralButton("Cancel", (s, a) => { ((Dialog)s).Dismiss(); });
-            builder.Show();
-
-        }
-
-        private void UpdateUser(SignUp user)
-        {
-            Intent updateIntent = new Intent(this, typeof(ProfileActivity));
-            updateIntent.PutExtra("UserId", user.Id);
-            StartActivity(updateIntent);
-
-        }
-
-        private void DeleteUser(SignUp user)
-        {
-            obj_databaseManager.DeleteUser(user.Id);
-            Display();
-        }
-
-
-
-
-    }
-
 }
