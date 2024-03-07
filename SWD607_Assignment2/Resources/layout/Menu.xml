@@ -2,21 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
-
-    <!-- Next Button -->
-    <ImageButton
-        android:id="@+id/adminbtn"        
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"       
-        android:src="@drawable/admin_logo2"
-        android:textColor="@android:color/black"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/imageViewLogo"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="16dp"/>
+    android:background="@android:color/white">   
 
     <ImageButton
         android:id="@+id/buttonCart"
