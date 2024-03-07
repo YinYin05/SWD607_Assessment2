@@ -976,7 +976,10 @@ namespace Auckland_Rangers
         }
         private void Updatepressed(Object sender, EventArgs e)
         {
-            
+            Intent intent = new Intent(this, typeof(Activity));
+            intent.PutExtra("UserId", obj_SignUp.Id);
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
         }
         private void Deletepressed(Object sender, EventArgs e)
         {
@@ -986,6 +989,52 @@ namespace Auckland_Rangers
             StartActivity(intent);
         }
     }
+    /*[Activity(Label = "Update Users")]
+      public class Updatepage:Activity
+    {
+        string usernames
+        private int userId
+        pritected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle)
+            SetContentView(Resoure.Layout.UpdatePage)
+
+            usernames = Intent.GetStringExtra("username")
+            userId = Intent.GetIntExtra("UserId",0);
+            SignUp signUp = dataManager.GetUserId(UserId);
+            if (signUp != null)
+            {
+                EditTextUser.Text = signUp.UserName;
+                EditTextPassword.Text = signUp.Password;
+                EditTextMobile.Text = signUp.Mobile;
+                EditTextEmail.Text = signUp.Email;
+            }
+            else
+            {
+                Toast.MakeText(this, "Persons Data Not Found", ToastLength.Long).Show();
+            }
+        }
+        void ButtonUpdateClick(object sender, EventArgs e)
+        {
+            SignUp update = new SignUp()
+            {
+                Id = UserId,
+                UserName = EditTextUser.Text,
+                Password = EditTextPassword.Text,
+                Email = EditTextEmail.Text,
+                Mobile = EditTextMobile.Text
+            };
+            dataManager.UpdateUser(update);
+ 
+            Toast.MakeText(this, "Changes have been made", ToastLength.Long).Show();
+            username = EditTextUser.Text;
+            Intent intent = new Intent(this, typeof(ProfileActivity));
+            intent.PutExtra("username", username);
+            StartActivity(intent);
+        }
+    }
+
+     */
 
 
     //Payment
