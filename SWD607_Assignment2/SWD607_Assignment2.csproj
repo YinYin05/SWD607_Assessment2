@@ -73,6 +73,7 @@
     <None Remove="Resources\layout\OrderDetail.xml" />
     <None Remove="Resources\layout\PaymentOption.xml" />
     <None Remove="Resources\layout\Profile.xml" />
+    <None Remove="Resources\layout\Profile_Update.xml" />
     <None Remove="Resources\layout\Reservation.xml" />
     <None Remove="Resources\layout\Search.xml" />
     <None Remove="Resources\layout\SignIn.xml" />
