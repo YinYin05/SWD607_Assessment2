@@ -61,7 +61,6 @@
     <None Remove="Resources\drawable\white_button_border_gray.xml" />
     <None Remove="Resources\drawable\white_button_no_border.xml" />
     <None Remove="Resources\layout\AddEdit.xml" />
-    <None Remove="Resources\layout\All_users.xml" />
     <None Remove="Resources\layout\ContactUs.xml" />
     <None Remove="Resources\layout\CreditDebit.xml" />
     <None Remove="Resources\layout\FoodDescription.xml" />
