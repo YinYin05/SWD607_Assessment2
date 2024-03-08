@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Runtime.InteropServices;
 using static Android.Provider.ContactsContract.CommonDataKinds;
+using Javax.Security.Auth;
+using Android.Widget;
+using Android.Views;
 namespace Auckland_Rangers
 {
     [Activity(MainLauncher = true)]
@@ -209,6 +212,7 @@ namespace Auckland_Rangers
         ImageButton backbtn;
         Button btnAddEdit;
         Button btnDelete;
+        ListView listView; //jp
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -218,12 +222,29 @@ namespace Auckland_Rangers
                 backbtn = FindViewById<ImageButton>(Resource.Id.buttonBack);
                 btnDelete = FindViewById<Button>(Resource.Id.buttonDelete);
                 usernames = Intent.GetStringExtra("username");
+                listView = FindViewById<ListView>(Resource.Id.listView); //jp
 
                 backbtn.Click += BackPressed;
                 btnAddEdit.Click += AddEditPressed;
+
+                LoadReservations(); //jp
             }
 
         }
+        private void LoadReservations() //jp
+        {
+            // Initialize database context
+            var db = new ReservationDbContext();
+
+            // Retrieve all reservations from the database
+            List<Reservation> reservations = db.GetAllReservations().ToList();
+
+            // Initialize adapter with the retrieved reservations
+            ReservationAdapter adapter = new ReservationAdapter(this, reservations);
+
+            // Set adapter to ListView
+            listView.Adapter = adapter;
+        } //jp
         private void BackPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
@@ -1261,6 +1282,7 @@ namespace Auckland_Rangers
         [JsonProperty("totalResults")]
         public int totalResults { get; set; }
     }
+
     [Activity(Label = "AddEdit")]
     public class AddEditActivity : Activity
     {
@@ -1268,22 +1290,93 @@ namespace Auckland_Rangers
         Button addbutton;
         Button editbutton;
         Spinner Tablespin;
+        ReservationDbContext dbContext; // Add database context (JP)
+        TextView textView;
+        DatePicker datePicker;
+        TimePicker timePicker;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            {
-                SetContentView(Resource.Layout.AddEdit);
-                addbutton = FindViewById<Button>(Resource.Id.buttonAdd);
-                usernames = Intent.GetStringExtra("username");
-                editbutton = FindViewById<Button>(Resource.Id.buttonEdit);
-                Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
+            SetContentView(SWD607_Assignment2.Resource.Layout.AddEdit);
 
-                Tablespin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
-                var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Table_Number, Android.Resource.Layout.SimpleSpinnerItem);
-                adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
-                Tablespin.Adapter = adapter;
-            }
+            addbutton = FindViewById<Button>(Resource.Id.buttonAdd);
+            usernames = Intent.GetStringExtra("username");
+            editbutton = FindViewById<Button>(Resource.Id.buttonEdit);
+            Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
+            textView = FindViewById<TextView>(Resource.Id.textView38);
+            datePicker = FindViewById<DatePicker>(Resource.Id.datePicker1);
+            timePicker = FindViewById<TimePicker>(Resource.Id.timePicker1);
+
+            dbContext = new ReservationDbContext();
+
+            PopulateSpinner();
+
+            addbutton.Click += Addbutton_Click;
+            //editbutton.Click += Editbutton_Click;
         }
+
+        private void PopulateSpinner()
+        {
+            Tablespin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Table_Number, Android.Resource.Layout.SimpleSpinnerItem);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            Tablespin.Adapter = adapter;
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            Reservation reservation = new Reservation
+            {
+                username = usernames,
+                ReservationDateTime = GetSelectedDateTime(),
+                TableNumber = Tablespin.SelectedItem.ToString()
+            };
+
+            AddReservationToListView(reservation);
+
+            dbContext.AddOrUpdateReservation(reservation);
+
+            Toast.MakeText(this, "Reservation added successfully", ToastLength.Short).Show();
+        }
+
+        private void AddReservationToListView(Reservation reservation)
+        {
+            // Find the TextView to display reservation details
+            TextView textView = FindViewById<TextView>(Resource.Id.textView38);
+
+            // Create a string to hold reservation details
+            string reservationDetails = "Table Number: " + reservation.TableNumber + "\n" +
+                                         "Date & Time: " + reservation.ReservationDateTime.ToString("dd/MM/yyyy HH:mm") + "\n";
+
+            // Append the new reservation details to the existing text
+            textView.Append(reservationDetails);
+        }
+
+        /*private void Editbutton_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ReservationListActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }*/
+
+        private DateTime GetSelectedDateTime()
+        {
+            // Get selected date from date picker
+            int year = datePicker.Year;
+            int month = datePicker.Month + 1; // DatePicker month is zero-based
+            int day = datePicker.DayOfMonth;
+
+            // Get selected time from time picker
+            int hour = timePicker.Hour;
+            int minute = timePicker.Minute;
+
+            // Create DateTime object from selected date and time
+            DateTime selectedDateTime = new DateTime(year, month, day, hour, minute, 0);
+
+            return selectedDateTime;
+        }
+
         public void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
             Spinner spinner = (Spinner)sender;
