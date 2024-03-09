@@ -3,30 +3,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:padding="16dp">
+    android:background="@drawable/gray_button"
+    android:padding="15dp">
 
         <ListView
             android:id="@+id/reservationListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="1dp"
-            android:layout_marginTop="16dp"/>
+            android:divider="@android:color/black"              
+            android:dividerHeight="5dp"
+            android:layout_marginTop="5dp"/>
 
         <TextView
             android:id="@+id/textViewTableNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Table Number"
-            android:textSize="18sp" />
+            android:textStyle="bold"
+            android:textColor="@android:color/black"            
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textViewDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reservation Date and Time"
-            android:textSize="18sp" />
-    
-
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
 
 </LinearLayout>
