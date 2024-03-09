@@ -19,7 +19,7 @@
 	<string name="buttonBack">Search</string>
 	<string name="reservation_list">Reservation List</string>
 	<string name="lists_hint">Lists</string>
-	<string name="add_edit_button">Add / Edit</string>
+	<string name="add_edit_button">Add</string>
 	<string name="delete_button">Delete</string>
 	<string name="my_profile">My Profile</string>
 	<string name="delete_account">Delete Account</string>

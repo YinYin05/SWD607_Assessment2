@@ -167,31 +167,31 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void MainCartPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ReservationPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ReservationActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
@@ -208,8 +208,9 @@ namespace Auckland_Rangers
     {
         string usernames;
         ImageButton backbtn;
+        DatabaseManager db;
         Button btnAddEdit;
-        Button btnDelete;
+        List<Reservation> userdetails;
         ListView listView; //jp
         protected override void OnCreate(Bundle bundle)
         {
@@ -218,12 +219,12 @@ namespace Auckland_Rangers
                 SetContentView(Resource.Layout.Reservation);
                 btnAddEdit = FindViewById<Button>(Resource.Id.buttonAddEdit);
                 backbtn = FindViewById<ImageButton>(Resource.Id.buttonBack);
-                btnDelete = FindViewById<Button>(Resource.Id.buttonDelete);
                 usernames = Intent.GetStringExtra("username");
                 listView = FindViewById<ListView>(Resource.Id.listView); //jp
 
                 backbtn.Click += BackPressed;
                 btnAddEdit.Click += AddEditPressed;
+                listView.ItemClick += ListClicked;
 
                 LoadReservations(); //jp
             }
@@ -243,16 +244,41 @@ namespace Auckland_Rangers
             // Set adapter to ListView
             listView.Adapter = adapter;
         } //jp
+        private void ListClicked(Object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Reservation reserve = userdetails[e.Position];
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.SetTitle("Options");
+            builder.SetMessage("Please select one option");
+            builder.SetPositiveButton("Update", (s, a) => UpdateUser(reserve));
+            builder.SetNegativeButton("Delete", (s, a) => DeleteUser(reserve));
+            // Set the Cancel button with dismiss action
+            builder.SetNeutralButton("Cancel", (s, a) => { ((Dialog)s).Dismiss(); });
+            builder.Show();
+        }
+        private void UpdateUser(Reservation user)
+        {
+            Intent updateIntent = new Intent(this, typeof(Editpage));
+            updateIntent.PutExtra("username", usernames);
+            StartActivity(updateIntent);
+
+        }
+        private void DeleteUser(Reservation user)
+        {
+            db.DeleteUser(user.ReservationId);
+            LoadReservations();
+        }
         private void BackPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void AddEditPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(AddEditActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -1280,11 +1306,121 @@ namespace Auckland_Rangers
         [JsonProperty("totalResults")]
         public int totalResults { get; set; }
     }
+    public class Editpage : Activity
+    {
+        Spinner Tablespin;
+        ReservationDbContext dbContext;
+        TextView textView;
+        DatePicker datePicker;
+        TimePicker timePicker;
+        ImageButton back;
+        Button editbutton;
+        string usernames;
+        protected override void OnCreate(Bundle? savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.EditPage);
 
+            Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
+            textView = FindViewById<TextView>(Resource.Id.textView38);
+            datePicker = FindViewById<DatePicker>(Resource.Id.datePicker1);
+            timePicker = FindViewById<TimePicker>(Resource.Id.timePicker1);
+            back = FindViewById<ImageButton>(Resource.Id.buttonBack);
+            usernames = Intent.GetStringExtra("username");
+            dbContext = new ReservationDbContext();
+
+            PopulateSpinner();
+
+            editbutton.Click += editbutton_Click;
+            back.Click += backclicked;
+
+        }
+        private void editbutton_Click(object sender, EventArgs e)
+        {
+            Reservation reservation = new Reservation
+            {
+                username = usernames,
+                ReservationDateTime = GetSelectedDateTime(),
+                TableNumber = Tablespin.SelectedItem.ToString()
+            };
+
+            EditReservationToListView(reservation);
+
+            dbContext.AddOrUpdateReservation(reservation);
+
+            Intent intent = new Intent(this, typeof(ReservationActivity));
+            StartActivity(intent);
+            Toast.MakeText(this, "Reservation editted successfully", ToastLength.Short).Show();
+
+
+        }
+        private void EditReservationToListView(Reservation reservation)
+        {
+            // Find the TextView to display reservation details
+            TextView textView = FindViewById<TextView>(Resource.Id.textView38);
+
+            // Create a string to hold reservation details
+            string reservationDetails = "Table Number: " + reservation.TableNumber + "\n" +
+                                         "Date & Time: " + reservation.ReservationDateTime.ToString("dd/MM/yyyy HH:mm") + "\n";
+
+            // Append the new reservation details to the existing text
+            textView.Append(reservationDetails);
+        }
+        private void backclicked(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ReservationActivity));
+            StartActivity(intent);
+        }
+        private void PopulateSpinner()
+        {
+            Tablespin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(this, Resource.Array.Table_Number, Android.Resource.Layout.SimpleSpinnerItem);
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            Tablespin.Adapter = adapter;
+        }
+        public void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 1")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 2")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 3")
+            {
+
+            }
+            else if (String.Format("{0}", spinner.GetItemAtPosition(e.Position)) == "Table 4")
+            {
+
+            }
+        }
+        private DateTime GetSelectedDateTime()
+        {
+            // Get selected date from date picker
+            int year = datePicker.Year;
+            int month = datePicker.Month + 1; // DatePicker month is zero-based
+            int day = datePicker.DayOfMonth;
+
+            // Get selected time from time picker
+            int hour = timePicker.Hour;
+            int minute = timePicker.Minute;
+
+            // Create DateTime object from selected date and time
+            DateTime selectedDateTime = new DateTime(year, month, day, hour, minute, 0);
+
+            return selectedDateTime;
+        }
+
+    }
     [Activity(Label = "AddEdit")]
     public class AddEditActivity : Activity
     {
         string usernames;
+        ImageButton back;
         Button addbutton;
         Button editbutton;
         Spinner Tablespin;
@@ -1298,22 +1434,28 @@ namespace Auckland_Rangers
             base.OnCreate(bundle);
             SetContentView(SWD607_Assignment2.Resource.Layout.AddEdit);
 
-            addbutton = FindViewById<Button>(Resource.Id.buttonAdd);
+            addbutton = FindViewById<Button>(Resource.Id.buttonEdit); 
             usernames = Intent.GetStringExtra("username");
-            editbutton = FindViewById<Button>(Resource.Id.buttonEdit);
             Tablespin = FindViewById<Spinner>(Resource.Id.spinnerNumber);
             textView = FindViewById<TextView>(Resource.Id.textView38);
             datePicker = FindViewById<DatePicker>(Resource.Id.datePicker1);
             timePicker = FindViewById<TimePicker>(Resource.Id.timePicker1);
+            back = FindViewById<ImageButton>(Resource.Id.buttonBack);
 
             dbContext = new ReservationDbContext();
 
             PopulateSpinner();
 
             addbutton.Click += Addbutton_Click;
-            //editbutton.Click += Editbutton_Click;
+            back.Click += backclicked;
+            
         }
 
+        private void backclicked(Object sender,  EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ReservationActivity));
+            StartActivity(intent);
+        }
         private void PopulateSpinner()
         {
             Tablespin.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
@@ -1335,7 +1477,11 @@ namespace Auckland_Rangers
 
             dbContext.AddOrUpdateReservation(reservation);
 
+            Intent intent = new Intent(this, typeof(ReservationActivity));
+            StartActivity(intent);
             Toast.MakeText(this, "Reservation added successfully", ToastLength.Short).Show();
+            
+            
         }
 
         private void AddReservationToListView(Reservation reservation)
@@ -1350,14 +1496,6 @@ namespace Auckland_Rangers
             // Append the new reservation details to the existing text
             textView.Append(reservationDetails);
         }
-
-        /*private void Editbutton_Click(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(ReservationListActivity));
-            intent.PutExtra("username", usernames);
-            StartActivity(intent);
-        }*/
-
         private DateTime GetSelectedDateTime()
         {
             // Get selected date from date picker
