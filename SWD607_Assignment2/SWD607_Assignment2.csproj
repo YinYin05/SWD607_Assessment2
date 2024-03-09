@@ -15,6 +15,7 @@
     <None Remove="Resources\drawable\Cart_Button_Image.JPG" />
     <None Remove="Resources\drawable\Close_Button_Image.JPG" />
     <None Remove="Resources\drawable\Contact_Button_Image.JPG" />
+    <None Remove="Resources\drawable\gray_button_light.xml" />
     <None Remove="Resources\drawable\hokey_pokey1.jpg" />
     <None Remove="Resources\drawable\hokey_pokey2.jpg" />
     <None Remove="Resources\drawable\hokey_pokey3.jpg" />
@@ -74,13 +75,17 @@
     <None Remove="Resources\layout\Profile.xml" />
     <None Remove="Resources\layout\Profile_Update.xml" />
     <None Remove="Resources\layout\Reservation.xml" />
+    <None Remove="Resources\layout\ReservationListItem.xml" />
     <None Remove="Resources\layout\Search.xml" />
     <None Remove="Resources\layout\SignIn.xml" />
     <None Remove="Resources\layout\SignUp.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.8" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
   </ItemGroup>
 </Project>

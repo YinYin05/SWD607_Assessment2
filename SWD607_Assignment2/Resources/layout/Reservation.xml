@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reservation_list"
-        android:padding="40dp"
+        android:paddingStart="10dp"
         android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -34,12 +34,15 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="490dp"
         android:layout_below="@id/textViewReservation"
-        android:layout_marginTop="1dp"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:background="@drawable/gray_button" />
+        android:background="@drawable/white_button_border" />
 
     <!-- Add and Edit Button -->
     <Button
@@ -54,7 +57,7 @@
         android:padding="16dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/listView"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>
@@ -72,7 +75,7 @@
         android:padding="16dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/buttonAddEdit"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>
