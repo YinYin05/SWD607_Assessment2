@@ -63,6 +63,7 @@
     <None Remove="Resources\layout\AddEdit.xml" />
     <None Remove="Resources\layout\ContactUs.xml" />
     <None Remove="Resources\layout\CreditDebit.xml" />
+    <None Remove="Resources\layout\EditPage.xml" />
     <None Remove="Resources\layout\FoodDescription.xml" />
     <None Remove="Resources\layout\FoodDescription2.xml" />
     <None Remove="Resources\layout\FoodDescription3.xml" />
