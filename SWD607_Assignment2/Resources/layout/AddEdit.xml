@@ -15,8 +15,6 @@
             android:background="@android:color/white"
             android:padding="2dp">
 
-           
-
             <!-- Back Button -->
             <ImageButton
                 android:id="@+id/buttonBack"

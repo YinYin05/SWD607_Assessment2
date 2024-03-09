@@ -41,7 +41,7 @@ namespace Auckland_Rangers
             string password = edtpassword.Text;
             if (string.IsNullOrEmpty(usernames) || string.IsNullOrEmpty(password))
             {
-                Toast.MakeText(this, "Please enter both username and password", ToastLength.Short).Show();
+                Toast.MakeText(this, "Please enter both username and password", ToastLength.Long).Show();
                 return;
             }
             else
@@ -56,7 +56,7 @@ namespace Auckland_Rangers
                 }
                 else
                 {
-                    Toast.MakeText(this, "Please enter correct one", ToastLength.Short).Show();
+                    Toast.MakeText(this, "Please enter correct username/password", ToastLength.Long).Show();
                     return;
                 }
             }
@@ -116,7 +116,6 @@ namespace Auckland_Rangers
             StartActivity(intent);
         }
     }
-
 
     //Menu progress
     [Activity(Label = "Menu")]
@@ -200,7 +199,6 @@ namespace Auckland_Rangers
         }
     }
 
-
     //Reservation progress
     [Activity(Label = "reservation")]
     public class ReservationActivity : Activity
@@ -237,7 +235,6 @@ namespace Auckland_Rangers
             StartActivity(intent);
         }
     }
-
 
     //Orderdetail
     [Activity(Label = "Orderdetail")]
@@ -473,6 +470,7 @@ namespace Auckland_Rangers
             StartActivity(intent);
         }
     }
+
     [Activity(Label = "Food1")]
     public class FoodDescriptionActivity : Activity
     {
