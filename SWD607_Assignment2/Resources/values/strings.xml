@@ -120,6 +120,7 @@
 	<string name="proceed_button">Proceed</string>
 	<string name="cvc_what">What is this?</string>
 	<string name="search_button">Search</string>
-	
+	<string name="save_button">Save</string>
+	<string name="edit_reservation_tag">Edit Reservation</string>
 	
 </resources>

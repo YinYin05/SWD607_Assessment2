@@ -34,12 +34,12 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="490dp"
+        android:layout_height="570dp"
         android:layout_below="@id/textViewReservation"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/gray_button" />
@@ -57,7 +57,7 @@
         android:padding="16dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/listView"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"/>

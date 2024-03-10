@@ -9,17 +9,16 @@ using System.IO;
 
 namespace SWD607_Assignment2
 {
-    public class ReservationDbContext
+    public class ReservationDbContext : IDisposable
     {
         readonly SQLiteConnection connection;
 
         public ReservationDbContext()
         {
             string directoryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
-            
             string dbPath = Path.Combine(directoryPath, "Reservation_Data.db");
 
-            if (Directory.Exists(directoryPath))
+            if (!Directory.Exists(directoryPath))
             {
                 Directory.CreateDirectory(directoryPath);
             }
@@ -27,7 +26,6 @@ namespace SWD607_Assignment2
             try
             {
                 connection = new SQLiteConnection(dbPath);
-
                 connection.CreateTable<Reservation>();
             }
             catch (SQLiteException ex)
@@ -35,8 +33,8 @@ namespace SWD607_Assignment2
                 // Handle SQLite exceptions
                 Console.WriteLine("SQLite Exception: " + ex.Message);
                 throw; // Rethrow the exception to handle it at a higher level
-            }                  
-        }  
+            }
+        }
 
         // Method to add or update a reservation
         public void AddOrUpdateReservation(Reservation reservation)
@@ -52,10 +50,17 @@ namespace SWD607_Assignment2
         }
 
         // Method to retrieve all reservations
-        public TableQuery<Reservation> GetAllReservations()
+        public List<Reservation> GetAllReservations()
         {
-            return connection.Table<Reservation>();
+            return connection.Table<Reservation>().ToList();
         }
+
+        // Method to delete a reservation by its ID
+        public void DeleteReservation(int reservationId)
+        {
+            connection.Delete<Reservation>(reservationId);
+        }
+
         public void Dispose()
         {
             connection.Dispose();
