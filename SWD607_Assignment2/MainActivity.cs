@@ -67,7 +67,7 @@ namespace Auckland_Rangers
         private void SignUpPressed(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(SignUpActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
             //'Unable to find explicit activity class {com.companyname.SWD607_Assignment2/crc64b8371ed0b9bbb922.SignUpActivity};
             //have you declared this activity in your AndroidManifest.xml, or does your intent not match its declared <intent-filter>?'
@@ -115,7 +115,7 @@ namespace Auckland_Rangers
             _dbManager.InsertUser(UpdateUserData);
             Toast.MakeText(this, "Person Data is inserted successfully", ToastLength.Long).Show();
             Intent intent = new Intent(this, typeof(SignInActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -305,7 +305,7 @@ namespace Auckland_Rangers
     {
         EditText CheeseRoll, Pavlova, OnionDip, HokeyPokey, Fritter, Salad;
         ImageButton backbtn;
-        ImageView food1, food2, food3, food4, food5;
+        ImageView food1, food2, food3, food4, food5, food6;
         Button deletebtn1, deletebtn2, deletebtn3, deletebtn4, deletebtn5, deletebtn6, btnPayment;
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
         TextView cost1, cost2, cost3, cost4, cost5, cost6, orderdate, subtotal, totalGST, totalCost;
@@ -339,6 +339,7 @@ namespace Auckland_Rangers
                 food3 = FindViewById<ImageView>(Resource.Id.imageOnionDip);
                 food4 = FindViewById<ImageView>(Resource.Id.imageHokeyPokey);
                 food5 = FindViewById<ImageView>(Resource.Id.imageWhitebaitFritters);
+                food6 = FindViewById<ImageView>(Resource.Id.imageSesameFlankSteakSalad);
                 backbtn = FindViewById<ImageButton>(Resource.Id.buttonBack);
                 deletebtn1 = FindViewById<Button>(Resource.Id.deleteButton);
                 deletebtn2 = FindViewById<Button>(Resource.Id.deleteButton2);
@@ -359,6 +360,7 @@ namespace Auckland_Rangers
                 food3.Click += Food3description;
                 food4.Click += Food4description;
                 food5.Click += Food5description;
+                food6.Click += Food6description;
                 btnPayment.Click += PaymentPressed;
                 btnHome.Click += HomePressed;
                 btnContact.Click += ContactUsPressed;
@@ -378,7 +380,7 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void delete1Pressed(object sender, EventArgs e)
@@ -480,31 +482,37 @@ namespace Auckland_Rangers
         private void Food1description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food2description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription2Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food3description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription3Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food4description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription4Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Food5description(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription5Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void Food6description(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(FoodDescription6Activity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void PaymentPressed(Object sender, EventArgs e)
@@ -517,19 +525,19 @@ namespace Auckland_Rangers
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -569,37 +577,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription2Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -639,37 +647,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription3Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -708,37 +716,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription4Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -778,37 +786,37 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(FoodDescription5Activity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -848,41 +856,109 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void NextPressed(Object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
-            Intent.PutExtra("username", usernames);
+            Intent intent = new Intent(this, typeof(FoodDescription6Activity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BackToOrderdetail(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
+    [Activity(Label = "Food6")]
+    public class FoodDescription6Activity : Activity
+    {
+        ImageButton Nextbtn, Closebtn;
+        Button Orderbtn;
+        ImageButton btnHome, btnSearch, btnContact, btnProfile;
+        string usernames;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            {
+                SetContentView(Resource.Layout.FoodDescription6);
+                Nextbtn = FindViewById<ImageButton>(Resource.Id.buttonNext);
+                Closebtn = FindViewById<ImageButton>(Resource.Id.buttonClose);
+                Orderbtn = FindViewById<Button>(Resource.Id.buttonOrderNow);
+                usernames = Intent.GetStringExtra("username");
+                btnHome = FindViewById<ImageButton>(Resource.Id.buttonHome);
+                btnSearch = FindViewById<ImageButton>(Resource.Id.buttonSearch);
+                btnContact = FindViewById<ImageButton>(Resource.Id.buttonContactUs);
+                btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
 
+                Nextbtn.Click += NextPressed;
+                Closebtn.Click += BackToOrderdetail;
+                Orderbtn.Click += BackToOrderdetail;
+                btnHome.Click += HomePressed;
+                btnContact.Click += ContactUsPressed;
+                btnProfile.Click += ProfilePressed;
+                btnSearch.Click += SearchPressed;
+            }
+
+        }
+        private void SearchPressed(Object sender, EventArgs e)
+        {
+            SearchActivity search = new SearchActivity();
+            Intent intent = new Intent(this, typeof(SearchActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void NextPressed(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(FoodDescriptionActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void BackToOrderdetail(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void HomePressed(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MenuActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void ContactUsPressed(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ContactActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+        private void ProfilePressed(Object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ProfileActivity));
+            intent.PutExtra("username", usernames);
+            StartActivity(intent);
+        }
+    }
     //Contact Us
     [Activity(Label = "Contact")]
     public class ContactActivity : Activity
@@ -915,7 +991,7 @@ namespace Auckland_Rangers
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void SendPressed(Object sender, EventArgs e)
@@ -925,19 +1001,19 @@ namespace Auckland_Rangers
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
-            Intent.PutExtra("username", usernames);
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -999,6 +1075,7 @@ namespace Auckland_Rangers
         private void BackMenu(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void Updatepressed(Object sender, EventArgs e)
@@ -1062,6 +1139,7 @@ namespace Auckland_Rangers
         private void backtoProfile(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         void ButtonUpdateClick(object sender, EventArgs e)
@@ -1089,6 +1167,7 @@ namespace Auckland_Rangers
     public class PaymentOptionActivity : Activity
     {
         string usernames;
+        float totalcost;
         ImageButton back;
         Button btncash, btncredit, Submit;
         ImageButton btnHome, btnSearch, btnContact, btnProfile;
@@ -1109,8 +1188,8 @@ namespace Auckland_Rangers
                 btnProfile = FindViewById<ImageButton>(Resource.Id.buttonProfile);
                 Totalamount = FindViewById<TextView>(Resource.Id.textViewTotalAmount);
                 Submit = FindViewById<Button>(Resource.Id.buttonProceedToPayment);
-                float Totalprice = Intent.GetFloatExtra("totalcost", 0);
-
+                totalcost = Intent.GetFloatExtra("totalcost", 0);
+                float Totalprice = totalcost;
                 Totalamount.Text = "$ " + Totalprice.ToString();
 
                 back.Click += BacktoOrder;
@@ -1127,6 +1206,7 @@ namespace Auckland_Rangers
         private void BacktoMenu(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
             Toast.MakeText(this, "Rating Recorded", ToastLength.Long).Show();
         }
@@ -1137,32 +1217,40 @@ namespace Auckland_Rangers
         private void CreditClicked(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(CreditActivity));
+            intent.PutExtra("username", usernames);
+            intent.PutExtra("totalcost", totalcost);
             StartActivity(intent);
         }
         private void SearchPressed(Object sender, EventArgs e)
         {
             SearchActivity search = new SearchActivity();
             Intent intent = new Intent(this, typeof(SearchActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void BacktoOrder(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(OrderdetailActivity));
+            intent.PutExtra("username", usernames);
+            intent.PutExtra("totalcost", totalcost);
             StartActivity(intent);
         }
         private void HomePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MenuActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ContactUsPressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ContactActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
         private void ProfilePressed(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(ProfileActivity));
+            intent.PutExtra("username", usernames);
             StartActivity(intent);
         }
     }
@@ -1171,6 +1259,7 @@ namespace Auckland_Rangers
     {
         ImageButton back;
         string usernames;
+        float totalcost;
         Button cancel, proceed;
         protected override void OnCreate(Bundle? savedInstanceState)
         {
@@ -1188,6 +1277,7 @@ namespace Auckland_Rangers
         private void backClicked(Object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(PaymentOptionActivity));
+            intent.PutExtra("totalcost", totalcost);
             StartActivity(intent);
         }
         private void backClickedpurchase(Object sender, EventArgs e)
@@ -1473,7 +1563,6 @@ namespace Auckland_Rangers
         string usernames;
         ImageButton back;
         Button addbutton;
-        Button editbutton;
         Spinner Tablespin;
         ReservationDbContext dbContext; // Add database context (JP)
         TextView textView;
