@@ -237,14 +237,24 @@ namespace Auckland_Rangers
             LoadReservations();
         }
 
-        // Method to load reservations
+        protected override void OnResume()
+        {
+            base.OnResume();
+            // Refresh reservations when the activity is resumed
+            LoadReservations();
+        }
+
+        // Method to load reservations for the current user
         private void LoadReservations()
         {
             // Retrieve all reservations from the database
-            List<Reservation> reservations = db.GetAllReservations();
+            List<Reservation> allReservations = db.GetAllReservations();
 
-            // Initialize adapter with the retrieved reservations
-            adapter = new ReservationAdapter(this, reservations);
+            // Filter reservations for the current user
+            List<Reservation> userReservations = allReservations.Where(r => r.username == usernames).ToList();
+
+            // Initialize adapter with the filtered reservations
+            adapter = new ReservationAdapter(this, userReservations);
 
             // Set adapter to ListView
             listView.Adapter = adapter;
@@ -270,7 +280,7 @@ namespace Auckland_Rangers
         {
             Intent updateIntent = new Intent(this, typeof(Editpage));
             updateIntent.PutExtra("username", usernames);
-            updateIntent.PutExtra("reservationId", reservation.ReservationId);            
+            updateIntent.PutExtra("reservationId", reservation.ReservationId);
             StartActivity(updateIntent);
         }
 
@@ -1492,10 +1502,11 @@ namespace Auckland_Rangers
                 // Update the reservation in the database
                 dbContext.AddOrUpdateReservation(existingReservation);
 
-                // Navigate back to ReservationActivity
-                Intent intent = new Intent(this, typeof(ReservationActivity));
-                StartActivity(intent);
+                // Show a toast message indicating successful edit
                 Toast.MakeText(this, "Reservation edited successfully", ToastLength.Short).Show();
+
+                // Finish the current activity
+                Finish();
             }
             else
             {
@@ -1646,11 +1657,13 @@ namespace Auckland_Rangers
 
             dbContext.AddOrUpdateReservation(reservation);
 
+            // Return to ReservationActivity
             Intent intent = new Intent(this, typeof(ReservationActivity));
+            intent.PutExtra("username", usernames); // Pass the username to ReservationActivity
             StartActivity(intent);
+            Finish(); // Finish the current activity to prevent going back to it
             Toast.MakeText(this, "Reservation added successfully", ToastLength.Short).Show();
-            
-            
+        
         }
 
         private void AddReservationToListView(Reservation reservation)
